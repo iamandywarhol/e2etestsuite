@@ -1,0 +1,24 @@
+{
+  "name": "artkive-testing-suite",
+  "version": "1.0.0",
+  "description": "Automated testing suite for Artkive box purchase flows",
+  "main": "index.js",
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:debug": "playwright test --debug",
+    "test:ui": "playwright test --ui",
+    "install-browsers": "playwright install",
+    "report": "playwright show-report"
+  },
+  "keywords": ["testing", "playwright", "automation", "artkive"],
+  "author": "Your Team",
+  "license": "MIT",
+  "devDependencies": {
+    "@playwright/test": "^1.40.0"
+  },
+  "dependencies": {
+    "axios": "^1.6.0",
+    "fs-extra": "^11.1.1"
+  }
+}
