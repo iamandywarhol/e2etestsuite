@@ -1,3 +1,4 @@
+//this is an older version of the test, do not use. 7/7/25
 const { test, expect } = require('@playwright/test');
 
 class ArtkiveTestRunner {
@@ -239,6 +240,74 @@ class ArtkiveTestRunner {
     }
   }
 
+  /* this adds additional cards to the test just in case that the first card is declined mon jul 7 */
+  
+  async fillPaymentInfoAndSubmit() {
+    await this.page.locator('input[name="name"]').fill(this.testData.cardName);
+    await this.page.locator('input[name="name"]').press('Tab');
+
+    const testCards = [
+      '4242424242424242',
+      '4000000000000002',
+      '5555555555554444',
+      '378282246310005',
+      '6011111111111117',
+      '4000002500003155'
+    ];
+
+    let cardAccepted = false;
+    for (const card of testCards) {
+      // Clear card number field robustly
+      const cardInput = this.page.locator('input[name="cardNumber"]');
+      await cardInput.click();
+      await cardInput.press(process.platform === 'darwin' ? 'Meta+A' : 'Control+A');
+      await cardInput.press('Backspace');
+
+      // Fill card details
+      await cardInput.fill(card);
+      await cardInput.press('Tab');
+      await this.page.getByRole('textbox', { name: 'MM/YY' }).fill(this.testData.expiryDate);
+      await this.page.getByRole('textbox', { name: 'MM/YY' }).press('Tab');
+      await this.page.locator('input[name="cardCvc"]').fill(this.testData.cvv);
+      await this.page.locator('input[name="cardCvc"]').press('Tab');
+      await this.page.locator('input[name="billingZipCode"]').fill(this.testData.zipCode);
+
+      // Check the TOS/Privacy Policy checkbox before each attempt
+      await this.page.getByRole('checkbox', { name: 'I agree with Terms of Use and' }).check();
+
+      // Click Place Order for each card attempt
+      await this.page.getByRole('button', { name: 'Place Order • $' }).click();
+
+      // Wait for either decline or confirmation
+      const declineMessage = this.page.locator('text=card has been declined');
+      const confirmation = this.page.getByRole('heading', { name: 'Your Artkive Box is On the' });
+
+      const result = await Promise.race([
+        declineMessage.waitFor({ timeout: 5000 }).then(() => 'declined').catch(() => null),
+        confirmation.waitFor({ timeout: 5000 }).then(() => 'confirmed').catch(() => null)
+      ]);
+
+      if (result === 'confirmed') {
+        this.cardAttemptLog.push(`Test card ${card} successful. Confirmation page reached.`);
+        cardAccepted = true;
+        break;
+      } else if (result === 'declined') {
+        this.cardAttemptLog.push(`Test card ${card} failed (declined). Moving to next card...`);
+        // Optionally close the error message
+        const closeBtn = this.page.locator('button[aria-label="Close"], button:has-text("×")');
+        if (await closeBtn.isVisible()) {
+          await closeBtn.click();
+        }
+        // Wait a moment for the form to reset if needed
+        await this.page.waitForTimeout(500);
+      }
+    }
+    if (!cardAccepted) {
+      this.cardAttemptLog.push('All test cards were declined.');
+      throw new Error('All test cards were declined');
+    }
+  }
+
   async runFullTest() {
     console.log('🚀 Starting Artkive Box Purchase Test...\n');
 
@@ -247,7 +316,8 @@ class ArtkiveTestRunner {
       () => this.findBoxPurchaseOption(),
       () => this.fillOrderForm(),
       () => this.proceedToCheckout(),
-      () => this.validateOrderSummary()
+      () => this.validateOrderSummary(),
+      () => this.fillPaymentInfoAndSubmit()
     ];
 
     for (const step of steps) {

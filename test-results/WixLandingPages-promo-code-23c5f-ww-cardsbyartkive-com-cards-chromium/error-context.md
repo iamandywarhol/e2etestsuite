@@ -1,0 +1,170 @@
+# Page snapshot
+
+```yaml
+- region "top of page"
+- button "Skip to Main Content"
+- banner:
+  - link:
+    - /url: https://www.cardsbyartkive.com
+  - link "Artkivelogo_New 1 2.png":
+    - /url: https://www.cardsbyartkive.com/home?oref=direct&siteVersion=1748
+    - img "Artkivelogo_New 1 2.png"
+  - link:
+    - /url: https://www.cardsbyartkive.com
+  - navigation "Site":
+    - list:
+      - listitem:
+        - button "Products":
+          - paragraph: Products
+        - button "More Products pages":
+          - img
+      - listitem:
+        - link "How It Works":
+          - /url: https://www.cardsbyartkive.com/how-it-works?oref=direct&siteVersion=1748
+          - paragraph: How It Works
+      - listitem:
+        - link "About Us":
+          - /url: https://www.cardsbyartkive.com/about-us?oref=direct&siteVersion=1748
+          - paragraph: About Us
+      - listitem:
+        - link "Gifting":
+          - /url: https://www.cardsbyartkive.com/gifting?oref=direct&siteVersion=1748
+          - paragraph: Gifting
+  - combobox:
+    - option "🇺🇸 US" [selected]
+    - option "🇨🇦 CA"
+  - link "Order Now":
+    - /url: https://artkiveapp.com/box-checkout/048ef7f31c?oref=direct&siteVersion=1748&promo=GREETINGCARDS
+- main:
+  - region "main content":
+    - region:
+      - button "Colorful Greeting Cards Set – Memory Book & Custom Box"
+      - img "Colorful Greeting Cards Set – Memory Book & Custom Box"
+      - button "Next Item":
+        - img
+    - heading "Cards Book" [level=5]
+    - paragraph: Holds up to 50 cards
+    - list:
+      - listitem:
+        - paragraph: Transform cards from any occasion
+    - list:
+      - listitem:
+        - paragraph: 8" x 8" custom hardcover book
+    - list:
+      - listitem:
+        - paragraph: Professional photography and editing of card images
+    - list:
+      - listitem:
+        - paragraph: Free shipping for box and book
+    - link "Order Now":
+      - /url: https://artkiveapp.com/box-checkout/048ef7f31c?oref=direct&siteVersion=1748&promo=GREETINGCARDS
+    - list:
+      - listitem:
+        - paragraph: Sturdy 9" x 6" x 2" box
+    - img "S0020241114082рррр0 2-min.png"
+    - heading "Double Cards Box" [level=5]
+    - paragraph: Holds up to 100 cards, twice as many as our standard cards box!
+    - link "Order Now":
+      - /url: https://artkiveapp.com/box-checkout/a6409880e7?promo=xlsave&oref=direct&siteVersion=1748
+  - heading "How It Works" [level=5]
+  - img "how it works_regular_1-min.png"
+  - paragraph: Order Box & Send Cards
+  - paragraph: You will receive a sturdy, custom box with a prepaid label to send in as many cards you can fit into the box. We will include all those cards in your book in the order you send them back.
+  - img "how it works_regular_2-min.png"
+  - paragraph: Book Design
+  - paragraph: Your cards are professionally photographed and edited. Then we'll create a book proof that highlights your cards - that you can edit and approve.
+  - img "how it works_regular_3-min.png"
+  - paragraph: Enjoy!
+  - paragraph: Receive your Cards by Artkive Book, and enjoy knowing that your cards are preserved and celebrated. A much easier way to reflect back on special memories!
+  - link "Order Now":
+    - /url: https://artkiveapp.com/box-checkout/048ef7f31c?siteVersion=1748&promo=GREETINGCARDS
+  - heading "People Are Loving Their Cards By Artkive Books!" [level=5]
+  - img "pngimg.com - google_PNG19644 1.png"
+  - paragraph: EXCELLENT
+  - img "Frame 6335445.png"
+  - paragraph: "4.8"
+  - heading "Our Process" [level=5]
+  - paragraph: We photograph all the cards you send back in your box, and we make you an amazing keepsake book. Magic!
+  - link "Order Now":
+    - /url: https://artkiveapp.com/box-checkout/048ef7f31c?siteVersion=1748&promo=GREETINGCARDS
+  - img "image 260-min.png"
+  - img "image 261-min.jpg"
+  - heading "There’s So Much Inside" [level=5]
+  - img "Women placing greeting cards into a memory box to be photographed and preserved in a keepsake book"
+  - paragraph: Your Cards
+  - paragraph: We'll photograph the front and inside of each card you send in. If you want your cards in a certain order in the book, stack them in the box in that order.
+  - img "Close-up of a person holding a custom Artkive card book with floral cover design and personalized title"
+  - paragraph: Your Cover
+  - paragraph: Add your book title and choose your book cover; either the one selected by your book designer, or another favorite card cover you choose.
+  - img "Hands flipping through a personalized keepsake card book with a greeting card and caption preview"
+  - paragraph: Your Personal Touch
+  - paragraph: Edit your book to make it uniquely yours. You can add captions, add dates, and rearrange your pages however you like when you review your book proof.
+  - link "Order Now":
+    - /url: https://artkiveapp.com/box-checkout/048ef7f31c?siteVersion=1748&promo=GREETINGCARDS
+  - heading "Need a Double Cards Box?" [level=5]
+  - paragraph: Holds up to 100 cards
+  - link "Order Now":
+    - /url: https://artkiveapp.com/box-checkout/a6409880e7?promo=xlsave&siteVersion=1748
+  - heading "Capture Cards From All Occasions!" [level=5]
+  - img "Greeting cards from multiple occasions including birthdays, weddings, thank yous, and graduations"
+  - img "Greeting cards from multiple occasions including birthdays, weddings, thank yous, and graduations"
+  - img "Greeting cards from multiple occasions including birthdays, weddings, thank yous, and graduations"
+  - img "Greeting cards from multiple occasions including birthdays, weddings, thank yous, and graduations"
+  - img "Greeting cards from multiple occasions including birthdays, weddings, thank yous, and graduations"
+  - img "Open custom memory book displaying a colorful birthday greeting card and handwritten message"
+  - img "Stack of colorful handwritten greeting cards and envelopes ready for keepsake preservation"
+  - heading "Cards Book" [level=5]
+  - paragraph: Holds up to 50 cards
+  - list:
+    - listitem:
+      - paragraph: Transform cards from any occasion
+  - list:
+    - listitem:
+      - paragraph: Professional photography and editing of card images
+  - list:
+    - listitem:
+      - paragraph: Sturdy 9" x 6" x 2" box
+  - list:
+    - listitem:
+      - paragraph: Free shipping for box and book
+  - link "Order Now":
+    - /url: https://artkiveapp.com/box-checkout/048ef7f31c?siteVersion=1748&promo=GREETINGCARDS
+  - list:
+    - listitem:
+      - paragraph: 8" x 8" custom hardcover book
+  - heading "Double Cards Box" [level=5]
+  - paragraph: Holds up to 100 cards, twice as many as our standard cards box!
+  - link "Order Now":
+    - /url: https://artkiveapp.com/box-checkout/a6409880e7?promo=xlsave&siteVersion=1748
+  - heading "You Will Also Love!" [level=5]
+  - img
+  - link "Elegant Just Married keepsake book with floral design for preserving wedding cards and memories":
+    - /url: https://www.cardsbyartkive.com/wedding-cards-memory-books?siteVersion=1748
+    - img "Elegant Just Married keepsake book with floral design for preserving wedding cards and memories"
+  - paragraph: Wedding Cards Book
+  - paragraph: Perfect for engagement, bridal shower, and wedding cards! It's such a special way to remember all the wishes received on your special day.
+  - link "Learn More":
+    - /url: https://www.cardsbyartkive.com/wedding-cards-memory-books?siteVersion=1748
+- contentinfo:
+  - paragraph: ©2025 Artkive All Rights Reserved.
+  - paragraph:
+    - link "Privacy Policy":
+      - /url: https://artkiveapp.com/privacypolicy?oref=direct&siteVersion=1748
+    - text: "&"
+    - link "Terms of Service":
+      - /url: https://artkiveapp.com/tou?oref=direct&siteVersion=1748
+  - combobox:
+    - option "🇺🇸 US" [selected]
+    - option "🇨🇦 CA"
+- region "bottom of page"
+- iframe
+- dialog "POPUP Form":
+  - button "Close dialog":
+    - img "Close dialog"
+  - text: Want To Get $20 Off?
+  - textbox "First Name"
+  - textbox "Email"
+  - button "Get $20 Off"
+  - paragraph: By subscribing you agree to receive marketing communications from us. To opt out, click unsubscribe at the bottom of our emails.
+  - img
+```

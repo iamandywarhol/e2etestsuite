@@ -1,24 +1,57 @@
 {
-  "name": "artkive-testing-suite",
-  "version": "1.0.0",
-  "description": "Automated testing suite for Artkive box purchase flows",
-  "main": "index.js",
-  "scripts": {
-    "test": "playwright test",
-    "test:headed": "playwright test --headed",
-    "test:debug": "playwright test --debug",
-    "test:ui": "playwright test --ui",
-    "install-browsers": "playwright install",
-    "report": "playwright show-report"
-  },
-  "keywords": ["testing", "playwright", "automation", "artkive"],
-  "author": "Your Team",
-  "license": "MIT",
-  "devDependencies": {
-    "@playwright/test": "^1.40.0"
-  },
-  "dependencies": {
-    "axios": "^1.6.0",
-    "fs-extra": "^11.1.1"
-  }
+"name": "artkive-testing-suite",
+"version": "1.0.0",
+"description": "Automated functional and visual testing framework for Artkive.com using Playwright",
+"main": "index.js",
+"scripts": {
+  "test": "playwright test",
+  "test:headed": "playwright test --headed",
+  "test:debug": "playwright test --debug",
+  "test:ui": "playwright test --ui",
+  "test:box-purchase": "playwright test tests/artkive-box-purchase.spec.js",
+  "test:recorded-flow": "playwright test tests/artkive-recorded-flow.spec.js", 
+  "test:simple": "playwright test tests/simple-artkive.spec.js",
+  "test:mobile": "playwright test --project='Mobile Chrome' --project='Mobile Safari'",
+  "test:cross-browser": "playwright test --project=chromium --project=firefox --project=webkit",
+  "install-browsers": "playwright install",
+  "record": "npx playwright codegen https://www.artkiveapp.com",
+  "record-custom": "node utils/record-flow.js",
+  "report": "playwright show-report",
+  "report:json": "playwright test --reporter=json",
+  "clean": "rm -rf test-results screenshots recordings playwright-report",
+  "setup": "npm install && npm run install-browsers",
+  "lint": "eslint tests/ utils/ --ext .js",
+  "format": "prettier --write tests/ utils/ config/",
+  "ci": "playwright test --reporter=html,json",
+  "dev": "npm run test:headed"
+},
+"keywords": [
+  "testing",
+  "playwright", 
+  "automation",
+  "e2e",
+  "artkive",
+  "visual-testing",
+  "functional-testing"
+],
+"author": {
+  "name": "Development Team",
+  "email": "dev-team@company.com"
+},
+"license": "MIT",
+"engines": {
+  "node": ">=16.0.0",
+  "npm": ">=8.0.0"
+},
+"devDependencies": {
+  "@playwright/test": "^1.40.0",
+  "eslint": "^8.50.0",
+  "prettier": "^3.0.0"
+},
+"dependencies": {
+  "axios": "^1.6.0",
+  "fs-extra": "^11.1.1",
+  "dotenv": "^16.3.1",
+  "date-fns": "^2.30.0"
+}
 }

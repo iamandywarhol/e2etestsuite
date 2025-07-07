@@ -1,4 +1,5 @@
 // tests/artkive-recorded-flow.spec.js
+// this is an outdated version of the test, do not use. 
 const { test, expect } = require('@playwright/test');
 
 class ArtkiveRecordedTest {
@@ -13,7 +14,7 @@ class ArtkiveRecordedTest {
       city: 'Van Nuys',
       zipCode: '91406',
       cardName: 'Jeffrey Lipp',
-      cardNumber: '4154178254252182',
+      cardNumber: '4242424242424242',
       expiryDate: '11/28',
       cvv: '331'
     };
