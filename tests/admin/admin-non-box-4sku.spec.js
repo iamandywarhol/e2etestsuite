@@ -1,9 +1,6 @@
 import { test, expect } from '@playwright/test';
 import fs from 'fs';
 
-// You may want to move credentials to a data file for security/maintainability
-//const ADMIN_EMAIL = 'nathan.b@artkivebox.com';
-//const ADMIN_PASSWORD = 'Stanford1!';
 
 //this should read from the json file the credentials etc. 
 const testData = JSON.parse(fs.readFileSync(__dirname + '/admin-box-purchase.data.json', 'utf-8'));
@@ -45,4 +42,58 @@ test('Admin Non-Box SKUs: Cards - Original, Wedding, XL Cards (Current Day > 1)'
   }
 
   expect(found).toBe(true);
+});
+
+test('Gift Cards: at least one created within last 14 days', async ({ page }) => {
+  // Login
+  await page.goto('https://www.artkiveapp.com/admin');
+  await page.getByRole('textbox', { name: 'Email' }).fill(testData.login.email);
+  await page.getByRole('textbox', { name: 'Password' }).fill(testData.login.password);
+  await page.getByRole('button', { name: 'Login' }).click();
+
+  // Navigate to Gift Cards > Ecom Gift Cards
+  await page.getByRole('link', { name: 'Gift Cards' }).click();
+  await page.getByRole('link', { name: 'Ecom Gift Cards' }).click();
+
+  // Wait for the table to load (adjust selector if needed)
+  await page.waitForSelector('tbody tr td:nth-child(7)'); // Adjust column if needed
+
+  const rows = await page.locator('tbody tr');
+  const rowCount = await rows.count();
+  console.log(`Found ${rowCount} rows in the table.`);
+
+  // Get today's date and 14 days ago in the table's format
+  const today = new Date();
+  const twoWeeksAgo = new Date();
+  twoWeeksAgo.setDate(today.getDate() - 14);
+
+  // Helper to parse table date string (handles both / and -)
+  function parseTableDate(dateStr) {
+    // Accepts 'MM/DD/YYYY' or 'MM-DD-YYYY'
+    const [mm, dd, yyyy] = dateStr.replace(/-/g, '/').split('/');
+    return new Date(`${yyyy}-${mm}-${dd}`);
+  }
+
+  let foundRecent = false;
+  for (let i = 0; i < rowCount; i++) {
+    const row = rows.nth(i);
+    const cellCount = await row.locator('td').count();
+    if (cellCount < 7) {
+      console.log(`Row ${i + 1}: Skipped (only ${cellCount} cells)`);
+      continue;
+    }
+    const createdOn = (await row.locator('td').nth(6).textContent())?.trim(); // 7th column, 0-based index
+    console.log(`Row ${i + 1}: Created On: ${createdOn}`);
+
+    if (!createdOn) continue;
+
+    const cellDate = parseTableDate(createdOn);
+    if (cellDate >= twoWeeksAgo && cellDate <= today) {
+      foundRecent = true;
+      console.log(`Row ${i + 1} is within the last 14 days: ${createdOn}`);
+      break;
+    }
+  }
+
+  expect(foundRecent).toBe(true);
 });
