@@ -6,7 +6,7 @@ module.exports = defineConfig({
   fullyParallel: false, // Run tests sequentially for now
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
-  workers: process.env.CI ? 1 : 1,
+  workers: process.env.CI ? 1 : undefined,
   reporter: [
     ['html'],
     ['json', { outputFile: 'test-results/results.json' }],

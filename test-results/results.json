@@ -121,19 +121,19 @@
     "updateSnapshots": "missing",
     "updateSourceMethod": "patch",
     "version": "1.53.1",
-    "workers": 1,
+    "workers": 5,
     "webServer": null
   },
   "suites": [
     {
-      "title": "admin/admin-giftcards-egift.spec.js",
-      "file": "admin/admin-giftcards-egift.spec.js",
+      "title": "admin/admin-invoices-all.spec.js",
+      "file": "admin/admin-invoices-all.spec.js",
       "column": 0,
       "line": 0,
       "specs": [
         {
-          "title": "Gift Cards: at least one created within last 14 days",
-          "ok": false,
+          "title": "Admin Invoices: Output each row until Payment Status is Paid",
+          "ok": true,
           "tags": [],
           "tests": [
             {
@@ -146,73 +146,57 @@
                 {
                   "workerIndex": 0,
                   "parallelIndex": 0,
-                  "status": "failed",
-                  "duration": 3517,
-                  "error": {
-                    "message": "TypeError: _test.expect.fail is not a function",
-                    "stack": "TypeError: _test.expect.fail is not a function\n    at /Users/nathan/Desktop/Artkive/test-suite/tests/admin/admin-giftcards-egift.spec.js:102:16",
-                    "location": {
-                      "file": "/Users/nathan/Desktop/Artkive/test-suite/tests/admin/admin-giftcards-egift.spec.js",
-                      "column": 16,
-                      "line": 102
-                    },
-                    "snippet": "\u001b[0m \u001b[90m 100 |\u001b[39m         \u001b[90m//console.log ('Gift Card ID: ' + id + ' was not created within the last 14 days. Test Failed.');\u001b[39m\n \u001b[90m 101 |\u001b[39m         \u001b[90m// Automatically fail the test\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 102 |\u001b[39m         expect\u001b[33m.\u001b[39mfail(\u001b[32m'Test Failed. Gift Card ID: '\u001b[39m \u001b[33m+\u001b[39m id \u001b[33m+\u001b[39m \u001b[32m' was not created within the last 14 days.'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 103 |\u001b[39m\n \u001b[90m 104 |\u001b[39m     \n \u001b[90m 105 |\u001b[39m         \u001b[90m//we will create another function call here later to then run a gift card purchase and then a \u001b[39m\u001b[0m"
-                  },
-                  "errors": [
-                    {
-                      "location": {
-                        "file": "/Users/nathan/Desktop/Artkive/test-suite/tests/admin/admin-giftcards-egift.spec.js",
-                        "column": 16,
-                        "line": 102
-                      },
-                      "message": "TypeError: _test.expect.fail is not a function\n\n\u001b[0m \u001b[90m 100 |\u001b[39m         \u001b[90m//console.log ('Gift Card ID: ' + id + ' was not created within the last 14 days. Test Failed.');\u001b[39m\n \u001b[90m 101 |\u001b[39m         \u001b[90m// Automatically fail the test\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 102 |\u001b[39m         expect\u001b[33m.\u001b[39mfail(\u001b[32m'Test Failed. Gift Card ID: '\u001b[39m \u001b[33m+\u001b[39m id \u001b[33m+\u001b[39m \u001b[32m' was not created within the last 14 days.'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 103 |\u001b[39m\n \u001b[90m 104 |\u001b[39m     \n \u001b[90m 105 |\u001b[39m         \u001b[90m//we will create another function call here later to then run a gift card purchase and then a \u001b[39m\u001b[0m\n\u001b[2m    at /Users/nathan/Desktop/Artkive/test-suite/tests/admin/admin-giftcards-egift.spec.js:102:16\u001b[22m"
-                    }
-                  ],
+                  "status": "passed",
+                  "duration": 3896,
+                  "errors": [],
                   "stdout": [
                     {
-                      "text": "Found 50 rows in the table.\n"
+                      "text": "Found 51 rows in the table.\n"
                     },
                     {
-                      "text": "Today's Date: 07-10-2025\n"
+                      "text": "Today's Date: 07/10/2025\n"
                     },
                     {
-                      "text": "Row 1: ID: 4563, Date: 07-04-2025, Quanity: 1, Amount: $114.00, Shipping Status: Sent\n"
+                      "text": "Row 1: Skipped (only 4 cells)\n"
+                    },
+                    {
+                      "text": "Row 2: ID: 139276, Type: Generic, Order ID: Box Order #394193, State: Sent, Payment Status: Unpaid, Created On: 07/10/2025\n"
+                    },
+                    {
+                      "text": "Row 3: ID: 139275, Type: Generic, Order ID: Box Order #394993, State: Sent, Payment Status: Unpaid, Created On: 07/10/2025\n"
+                    },
+                    {
+                      "text": "Row 4: ID: 139274, Type: Generic, Order ID: Box Order #394838, State: Sent, Payment Status: Unpaid, Created On: 07/10/2025\n"
+                    },
+                    {
+                      "text": "Row 5: ID: 139273, Type: Generic, Order ID: Box Order #394588, State: Sent, Payment Status: Unpaid, Created On: 07/10/2025\n"
+                    },
+                    {
+                      "text": "Row 6: ID: 139272, Type: Generic, Order ID: Box Order #389125, State: Sent, Payment Status: Unpaid, Created On: 07/10/2025\n"
+                    },
+                    {
+                      "text": "Row 7: ID: 139271, Type: Generic, Order ID: Box Order #399242, State: Sent, Payment Status: Unpaid, Created On: 07/10/2025\n"
+                    },
+                    {
+                      "text": "Row 8: ID: 139270, Type: Generic, Order ID: Box Order #395069, State: Sent, Payment Status: Paid, Created On: 07/10/2025\n"
+                    },
+                    {
+                      "text": "Found a row with ID: 139270 with Payment Status: Paid. Test Passed.\n"
                     }
                   ],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2025-07-10T20:38:28.549Z",
+                  "startTime": "2025-07-10T23:05:08.062Z",
                   "annotations": [],
-                  "attachments": [
-                    {
-                      "name": "screenshot",
-                      "contentType": "image/png",
-                      "path": "/Users/nathan/Desktop/Artkive/test-suite/test-results/admin-admin-giftcards-egif-3c78c-created-within-last-14-days-chromium/test-failed-1.png"
-                    },
-                    {
-                      "name": "video",
-                      "contentType": "video/webm",
-                      "path": "/Users/nathan/Desktop/Artkive/test-suite/test-results/admin-admin-giftcards-egif-3c78c-created-within-last-14-days-chromium/video.webm"
-                    },
-                    {
-                      "name": "error-context",
-                      "contentType": "text/markdown",
-                      "path": "/Users/nathan/Desktop/Artkive/test-suite/test-results/admin-admin-giftcards-egif-3c78c-created-within-last-14-days-chromium/error-context.md"
-                    }
-                  ],
-                  "errorLocation": {
-                    "file": "/Users/nathan/Desktop/Artkive/test-suite/tests/admin/admin-giftcards-egift.spec.js",
-                    "column": 16,
-                    "line": 102
-                  }
+                  "attachments": []
                 }
               ],
-              "status": "unexpected"
+              "status": "expected"
             }
           ],
-          "id": "58611215102c7442a889-d98b56dad0d34603b08b",
-          "file": "admin/admin-giftcards-egift.spec.js",
-          "line": 15,
+          "id": "d689cf2f7f643a6087f4-3907a19714c0bd24d895",
+          "file": "admin/admin-invoices-all.spec.js",
+          "line": 11,
           "column": 5
         }
       ]
@@ -220,11 +204,11 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2025-07-10T20:38:28.249Z",
-    "duration": 4357.553,
-    "expected": 0,
+    "startTime": "2025-07-10T23:05:07.731Z",
+    "duration": 4846.853,
+    "expected": 1,
     "skipped": 0,
-    "unexpected": 1,
+    "unexpected": 0,
     "flaky": 0
   }
 }
