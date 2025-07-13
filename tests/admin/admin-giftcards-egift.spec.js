@@ -3,7 +3,7 @@ EGIFT ONLY
 ****************************************************
 * This test will check through a series of gift cards until it finds a gift card created within the last 14 days.
 * it will then assert if the gift card was created within the last 14 days.
-* this test only checks the ecom gift cards table. 
+* this test only checks the 'egift' cards table. 
 ****************************************************
 */
 import { test, expect } from '@playwright/test';

@@ -126,14 +126,14 @@
   },
   "suites": [
     {
-      "title": "admin/admin-invoices-all.spec.js",
-      "file": "admin/admin-invoices-all.spec.js",
+      "title": "VisualEcom/visEcom-pixelmatch-test.spec.js",
+      "file": "VisualEcom/visEcom-pixelmatch-test.spec.js",
       "column": 0,
       "line": 0,
       "specs": [
         {
-          "title": "Admin Invoices: Output each row until Payment Status is Paid",
-          "ok": true,
+          "title": "Visual diff with percentage logging",
+          "ok": false,
           "tags": [],
           "tests": [
             {
@@ -146,57 +146,70 @@
                 {
                   "workerIndex": 0,
                   "parallelIndex": 0,
-                  "status": "passed",
-                  "duration": 3896,
-                  "errors": [],
+                  "status": "failed",
+                  "duration": 13723,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n    at /Users/nathan/Desktop/Artkive/test-suite/tests/VisualEcom/visEcom-pixelmatch-test.spec.js:65:30",
+                    "location": {
+                      "file": "/Users/nathan/Desktop/Artkive/test-suite/tests/VisualEcom/visEcom-pixelmatch-test.spec.js",
+                      "column": 30,
+                      "line": 65
+                    },
+                    "snippet": "\u001b[0m \u001b[90m 63 |\u001b[39m       console\u001b[33m.\u001b[39mlog(\u001b[32m`Visual difference is greater than ${tolerance}%. Test failed.`\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 64 |\u001b[39m       comparedImages \u001b[33m=\u001b[39m \u001b[36mfalse\u001b[39m\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 65 |\u001b[39m       expect(comparedImages)\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 66 |\u001b[39m       \n \u001b[90m 67 |\u001b[39m     } \u001b[36melse\u001b[39m {\n \u001b[90m 68 |\u001b[39m       console\u001b[33m.\u001b[39mlog(\u001b[32m`Visual difference is less than ${tolerance}%. Test passed.`\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/nathan/Desktop/Artkive/test-suite/tests/VisualEcom/visEcom-pixelmatch-test.spec.js",
+                        "column": 30,
+                        "line": 65
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\n\u001b[0m \u001b[90m 63 |\u001b[39m       console\u001b[33m.\u001b[39mlog(\u001b[32m`Visual difference is greater than ${tolerance}%. Test failed.`\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 64 |\u001b[39m       comparedImages \u001b[33m=\u001b[39m \u001b[36mfalse\u001b[39m\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 65 |\u001b[39m       expect(comparedImages)\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 66 |\u001b[39m       \n \u001b[90m 67 |\u001b[39m     } \u001b[36melse\u001b[39m {\n \u001b[90m 68 |\u001b[39m       console\u001b[33m.\u001b[39mlog(\u001b[32m`Visual difference is less than ${tolerance}%. Test passed.`\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at /Users/nathan/Desktop/Artkive/test-suite/tests/VisualEcom/visEcom-pixelmatch-test.spec.js:65:30\u001b[22m"
+                    }
+                  ],
                   "stdout": [
                     {
-                      "text": "Found 51 rows in the table.\n"
+                      "text": "Visual difference: 4.28% (447413 pixels)\n"
                     },
                     {
-                      "text": "Today's Date: 07/10/2025\n"
-                    },
-                    {
-                      "text": "Row 1: Skipped (only 4 cells)\n"
-                    },
-                    {
-                      "text": "Row 2: ID: 139276, Type: Generic, Order ID: Box Order #394193, State: Sent, Payment Status: Unpaid, Created On: 07/10/2025\n"
-                    },
-                    {
-                      "text": "Row 3: ID: 139275, Type: Generic, Order ID: Box Order #394993, State: Sent, Payment Status: Unpaid, Created On: 07/10/2025\n"
-                    },
-                    {
-                      "text": "Row 4: ID: 139274, Type: Generic, Order ID: Box Order #394838, State: Sent, Payment Status: Unpaid, Created On: 07/10/2025\n"
-                    },
-                    {
-                      "text": "Row 5: ID: 139273, Type: Generic, Order ID: Box Order #394588, State: Sent, Payment Status: Unpaid, Created On: 07/10/2025\n"
-                    },
-                    {
-                      "text": "Row 6: ID: 139272, Type: Generic, Order ID: Box Order #389125, State: Sent, Payment Status: Unpaid, Created On: 07/10/2025\n"
-                    },
-                    {
-                      "text": "Row 7: ID: 139271, Type: Generic, Order ID: Box Order #399242, State: Sent, Payment Status: Unpaid, Created On: 07/10/2025\n"
-                    },
-                    {
-                      "text": "Row 8: ID: 139270, Type: Generic, Order ID: Box Order #395069, State: Sent, Payment Status: Paid, Created On: 07/10/2025\n"
-                    },
-                    {
-                      "text": "Found a row with ID: 139270 with Payment Status: Paid. Test Passed.\n"
+                      "text": "Visual difference is greater than 1%. Test failed.\n"
                     }
                   ],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2025-07-10T23:05:08.062Z",
+                  "startTime": "2025-07-11T22:03:09.038Z",
                   "annotations": [],
-                  "attachments": []
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/nathan/Desktop/Artkive/test-suite/test-results/VisualEcom-visEcom-pixelma-8cffc-iff-with-percentage-logging-chromium/test-failed-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/Users/nathan/Desktop/Artkive/test-suite/test-results/VisualEcom-visEcom-pixelma-8cffc-iff-with-percentage-logging-chromium/video.webm"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/nathan/Desktop/Artkive/test-suite/test-results/VisualEcom-visEcom-pixelma-8cffc-iff-with-percentage-logging-chromium/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/nathan/Desktop/Artkive/test-suite/tests/VisualEcom/visEcom-pixelmatch-test.spec.js",
+                    "column": 30,
+                    "line": 65
+                  }
                 }
               ],
-              "status": "expected"
+              "status": "unexpected"
             }
           ],
-          "id": "d689cf2f7f643a6087f4-3907a19714c0bd24d895",
-          "file": "admin/admin-invoices-all.spec.js",
-          "line": 11,
+          "id": "e86e0d8d4e47574b737f-bdeb82b84913fffbfb3a",
+          "file": "VisualEcom/visEcom-pixelmatch-test.spec.js",
+          "line": 13,
           "column": 5
         }
       ]
@@ -204,11 +217,11 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2025-07-10T23:05:07.731Z",
-    "duration": 4846.853,
-    "expected": 1,
+    "startTime": "2025-07-11T22:03:08.712Z",
+    "duration": 14908.962,
+    "expected": 0,
     "skipped": 0,
-    "unexpected": 0,
+    "unexpected": 1,
     "flaky": 0
   }
 }
