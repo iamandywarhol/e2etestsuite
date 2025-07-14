@@ -126,8 +126,8 @@
   },
   "suites": [
     {
-      "title": "VisualEcom/visEcom-pixelmatch-test.spec.js",
-      "file": "VisualEcom/visEcom-pixelmatch-test.spec.js",
+      "title": "VisualEcom/VisEcom-Pricing-page.spec.js",
+      "file": "VisualEcom/VisEcom-Pricing-page.spec.js",
       "column": 0,
       "line": 0,
       "specs": [
@@ -147,68 +147,76 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "failed",
-                  "duration": 13723,
+                  "duration": 16792,
                   "error": {
-                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m",
-                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n    at /Users/nathan/Desktop/Artkive/test-suite/tests/VisualEcom/visEcom-pixelmatch-test.spec.js:65:30",
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveScreenshot\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\n  Expected an image 1280px by 7379px, received 1280px by 7384px. 40024 pixels (ratio 0.01 of all image pixels) are different.\n\nExpected: \u001b[33m/Users/nathan/Desktop/Artkive/test-suite/tests/VisualEcom/VisEcom-Pricing-page.spec.js-snapshots/pricing-baseline-chromium-darwin.png\u001b[39m\nReceived: \u001b[33m/Users/nathan/Desktop/Artkive/test-suite/test-results/VisualEcom-VisEcom-Pricing-32adb-iff-with-percentage-logging-chromium/pricing-baseline-actual.png\u001b[39m\n    Diff: \u001b[33m/Users/nathan/Desktop/Artkive/test-suite/test-results/VisualEcom-VisEcom-Pricing-32adb-iff-with-percentage-logging-chromium/pricing-baseline-diff.png\u001b[39m\n\nCall log:\n\u001b[2m  - Expect \"toHaveScreenshot(pricing-baseline.png)\" with timeout 5000ms\u001b[22m\n\u001b[2m    - verifying given screenshot expectation\u001b[22m\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m    - disabled all CSS animations\u001b[22m\n\u001b[2m  - waiting for fonts to load...\u001b[22m\n\u001b[2m  - fonts loaded\u001b[22m\n\u001b[2m  - Expected an image 1280px by 7379px, received 1280px by 7384px. 40024 pixels (ratio 0.01 of all image pixels) are different.\u001b[22m\n\u001b[2m  - waiting 100ms before taking screenshot\u001b[22m\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m    - disabled all CSS animations\u001b[22m\n\u001b[2m  - waiting for fonts to load...\u001b[22m\n\u001b[2m  - fonts loaded\u001b[22m\n\u001b[2m  - captured a stable screenshot\u001b[22m\n\u001b[2m  - Expected an image 1280px by 7379px, received 1280px by 7384px. 40024 pixels (ratio 0.01 of all image pixels) are different.\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveScreenshot\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\n  Expected an image 1280px by 7379px, received 1280px by 7384px. 40024 pixels (ratio 0.01 of all image pixels) are different.\n\nExpected: \u001b[33m/Users/nathan/Desktop/Artkive/test-suite/tests/VisualEcom/VisEcom-Pricing-page.spec.js-snapshots/pricing-baseline-chromium-darwin.png\u001b[39m\nReceived: \u001b[33m/Users/nathan/Desktop/Artkive/test-suite/test-results/VisualEcom-VisEcom-Pricing-32adb-iff-with-percentage-logging-chromium/pricing-baseline-actual.png\u001b[39m\n    Diff: \u001b[33m/Users/nathan/Desktop/Artkive/test-suite/test-results/VisualEcom-VisEcom-Pricing-32adb-iff-with-percentage-logging-chromium/pricing-baseline-diff.png\u001b[39m\n\nCall log:\n\u001b[2m  - Expect \"toHaveScreenshot(pricing-baseline.png)\" with timeout 5000ms\u001b[22m\n\u001b[2m    - verifying given screenshot expectation\u001b[22m\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m    - disabled all CSS animations\u001b[22m\n\u001b[2m  - waiting for fonts to load...\u001b[22m\n\u001b[2m  - fonts loaded\u001b[22m\n\u001b[2m  - Expected an image 1280px by 7379px, received 1280px by 7384px. 40024 pixels (ratio 0.01 of all image pixels) are different.\u001b[22m\n\u001b[2m  - waiting 100ms before taking screenshot\u001b[22m\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m    - disabled all CSS animations\u001b[22m\n\u001b[2m  - waiting for fonts to load...\u001b[22m\n\u001b[2m  - fonts loaded\u001b[22m\n\u001b[2m  - captured a stable screenshot\u001b[22m\n\u001b[2m  - Expected an image 1280px by 7379px, received 1280px by 7384px. 40024 pixels (ratio 0.01 of all image pixels) are different.\u001b[22m\n\n    at /Users/nathan/Desktop/Artkive/test-suite/tests/VisualEcom/VisEcom-Pricing-page.spec.js:32:23",
                     "location": {
-                      "file": "/Users/nathan/Desktop/Artkive/test-suite/tests/VisualEcom/visEcom-pixelmatch-test.spec.js",
-                      "column": 30,
-                      "line": 65
+                      "file": "/Users/nathan/Desktop/Artkive/test-suite/tests/VisualEcom/VisEcom-Pricing-page.spec.js",
+                      "column": 23,
+                      "line": 32
                     },
-                    "snippet": "\u001b[0m \u001b[90m 63 |\u001b[39m       console\u001b[33m.\u001b[39mlog(\u001b[32m`Visual difference is greater than ${tolerance}%. Test failed.`\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 64 |\u001b[39m       comparedImages \u001b[33m=\u001b[39m \u001b[36mfalse\u001b[39m\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 65 |\u001b[39m       expect(comparedImages)\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 66 |\u001b[39m       \n \u001b[90m 67 |\u001b[39m     } \u001b[36melse\u001b[39m {\n \u001b[90m 68 |\u001b[39m       console\u001b[33m.\u001b[39mlog(\u001b[32m`Visual difference is less than ${tolerance}%. Test passed.`\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m"
+                    "snippet": "\u001b[0m \u001b[90m 30 |\u001b[39m\n \u001b[90m 31 |\u001b[39m    \u001b[90m// Take a screenshot with the video area masked\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 32 |\u001b[39m    \u001b[36mawait\u001b[39m expect(page)\u001b[33m.\u001b[39mtoHaveScreenshot(\u001b[32m'pricing-baseline.png'\u001b[39m\u001b[33m,\u001b[39m {\n \u001b[90m    |\u001b[39m                       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 33 |\u001b[39m     fullPage\u001b[33m:\u001b[39m \u001b[36mtrue\u001b[39m\u001b[33m,\u001b[39m\n \u001b[90m 34 |\u001b[39m    \u001b[90m// mask: [\u001b[39m\n \u001b[90m 35 |\u001b[39m    \u001b[90m//   page.locator('#hero-video')\u001b[39m\u001b[0m"
                   },
                   "errors": [
                     {
                       "location": {
-                        "file": "/Users/nathan/Desktop/Artkive/test-suite/tests/VisualEcom/visEcom-pixelmatch-test.spec.js",
-                        "column": 30,
-                        "line": 65
+                        "file": "/Users/nathan/Desktop/Artkive/test-suite/tests/VisualEcom/VisEcom-Pricing-page.spec.js",
+                        "column": 23,
+                        "line": 32
                       },
-                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\n\u001b[0m \u001b[90m 63 |\u001b[39m       console\u001b[33m.\u001b[39mlog(\u001b[32m`Visual difference is greater than ${tolerance}%. Test failed.`\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 64 |\u001b[39m       comparedImages \u001b[33m=\u001b[39m \u001b[36mfalse\u001b[39m\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 65 |\u001b[39m       expect(comparedImages)\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 66 |\u001b[39m       \n \u001b[90m 67 |\u001b[39m     } \u001b[36melse\u001b[39m {\n \u001b[90m 68 |\u001b[39m       console\u001b[33m.\u001b[39mlog(\u001b[32m`Visual difference is less than ${tolerance}%. Test passed.`\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at /Users/nathan/Desktop/Artkive/test-suite/tests/VisualEcom/visEcom-pixelmatch-test.spec.js:65:30\u001b[22m"
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveScreenshot\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\n  Expected an image 1280px by 7379px, received 1280px by 7384px. 40024 pixels (ratio 0.01 of all image pixels) are different.\n\nExpected: \u001b[33m/Users/nathan/Desktop/Artkive/test-suite/tests/VisualEcom/VisEcom-Pricing-page.spec.js-snapshots/pricing-baseline-chromium-darwin.png\u001b[39m\nReceived: \u001b[33m/Users/nathan/Desktop/Artkive/test-suite/test-results/VisualEcom-VisEcom-Pricing-32adb-iff-with-percentage-logging-chromium/pricing-baseline-actual.png\u001b[39m\n    Diff: \u001b[33m/Users/nathan/Desktop/Artkive/test-suite/test-results/VisualEcom-VisEcom-Pricing-32adb-iff-with-percentage-logging-chromium/pricing-baseline-diff.png\u001b[39m\n\nCall log:\n\u001b[2m  - Expect \"toHaveScreenshot(pricing-baseline.png)\" with timeout 5000ms\u001b[22m\n\u001b[2m    - verifying given screenshot expectation\u001b[22m\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m    - disabled all CSS animations\u001b[22m\n\u001b[2m  - waiting for fonts to load...\u001b[22m\n\u001b[2m  - fonts loaded\u001b[22m\n\u001b[2m  - Expected an image 1280px by 7379px, received 1280px by 7384px. 40024 pixels (ratio 0.01 of all image pixels) are different.\u001b[22m\n\u001b[2m  - waiting 100ms before taking screenshot\u001b[22m\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m    - disabled all CSS animations\u001b[22m\n\u001b[2m  - waiting for fonts to load...\u001b[22m\n\u001b[2m  - fonts loaded\u001b[22m\n\u001b[2m  - captured a stable screenshot\u001b[22m\n\u001b[2m  - Expected an image 1280px by 7379px, received 1280px by 7384px. 40024 pixels (ratio 0.01 of all image pixels) are different.\u001b[22m\n\n\n\u001b[0m \u001b[90m 30 |\u001b[39m\n \u001b[90m 31 |\u001b[39m    \u001b[90m// Take a screenshot with the video area masked\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 32 |\u001b[39m    \u001b[36mawait\u001b[39m expect(page)\u001b[33m.\u001b[39mtoHaveScreenshot(\u001b[32m'pricing-baseline.png'\u001b[39m\u001b[33m,\u001b[39m {\n \u001b[90m    |\u001b[39m                       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 33 |\u001b[39m     fullPage\u001b[33m:\u001b[39m \u001b[36mtrue\u001b[39m\u001b[33m,\u001b[39m\n \u001b[90m 34 |\u001b[39m    \u001b[90m// mask: [\u001b[39m\n \u001b[90m 35 |\u001b[39m    \u001b[90m//   page.locator('#hero-video')\u001b[39m\u001b[0m\n\u001b[2m    at /Users/nathan/Desktop/Artkive/test-suite/tests/VisualEcom/VisEcom-Pricing-page.spec.js:32:23\u001b[22m"
                     }
                   ],
-                  "stdout": [
-                    {
-                      "text": "Visual difference: 4.28% (447413 pixels)\n"
-                    },
-                    {
-                      "text": "Visual difference is greater than 1%. Test failed.\n"
-                    }
-                  ],
+                  "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2025-07-11T22:03:09.038Z",
+                  "startTime": "2025-07-14T17:34:53.499Z",
                   "annotations": [],
                   "attachments": [
                     {
+                      "name": "pricing-baseline-expected.png",
+                      "contentType": "image/png",
+                      "path": "/Users/nathan/Desktop/Artkive/test-suite/tests/VisualEcom/VisEcom-Pricing-page.spec.js-snapshots/pricing-baseline-chromium-darwin.png"
+                    },
+                    {
+                      "name": "pricing-baseline-actual.png",
+                      "contentType": "image/png",
+                      "path": "/Users/nathan/Desktop/Artkive/test-suite/test-results/VisualEcom-VisEcom-Pricing-32adb-iff-with-percentage-logging-chromium/pricing-baseline-actual.png"
+                    },
+                    {
+                      "name": "pricing-baseline-diff.png",
+                      "contentType": "image/png",
+                      "path": "/Users/nathan/Desktop/Artkive/test-suite/test-results/VisualEcom-VisEcom-Pricing-32adb-iff-with-percentage-logging-chromium/pricing-baseline-diff.png"
+                    },
+                    {
                       "name": "screenshot",
                       "contentType": "image/png",
-                      "path": "/Users/nathan/Desktop/Artkive/test-suite/test-results/VisualEcom-visEcom-pixelma-8cffc-iff-with-percentage-logging-chromium/test-failed-1.png"
+                      "path": "/Users/nathan/Desktop/Artkive/test-suite/test-results/VisualEcom-VisEcom-Pricing-32adb-iff-with-percentage-logging-chromium/test-failed-1.png"
                     },
                     {
                       "name": "video",
                       "contentType": "video/webm",
-                      "path": "/Users/nathan/Desktop/Artkive/test-suite/test-results/VisualEcom-visEcom-pixelma-8cffc-iff-with-percentage-logging-chromium/video.webm"
+                      "path": "/Users/nathan/Desktop/Artkive/test-suite/test-results/VisualEcom-VisEcom-Pricing-32adb-iff-with-percentage-logging-chromium/video.webm"
                     },
                     {
                       "name": "error-context",
                       "contentType": "text/markdown",
-                      "path": "/Users/nathan/Desktop/Artkive/test-suite/test-results/VisualEcom-visEcom-pixelma-8cffc-iff-with-percentage-logging-chromium/error-context.md"
+                      "path": "/Users/nathan/Desktop/Artkive/test-suite/test-results/VisualEcom-VisEcom-Pricing-32adb-iff-with-percentage-logging-chromium/error-context.md"
                     }
                   ],
                   "errorLocation": {
-                    "file": "/Users/nathan/Desktop/Artkive/test-suite/tests/VisualEcom/visEcom-pixelmatch-test.spec.js",
-                    "column": 30,
-                    "line": 65
+                    "file": "/Users/nathan/Desktop/Artkive/test-suite/tests/VisualEcom/VisEcom-Pricing-page.spec.js",
+                    "column": 23,
+                    "line": 32
                   }
                 }
               ],
               "status": "unexpected"
             }
           ],
-          "id": "e86e0d8d4e47574b737f-bdeb82b84913fffbfb3a",
-          "file": "VisualEcom/visEcom-pixelmatch-test.spec.js",
+          "id": "f701c4a5c4923050afe4-d143baf11de4c5747d68",
+          "file": "VisualEcom/VisEcom-Pricing-page.spec.js",
           "line": 13,
           "column": 5
         }
@@ -217,8 +225,8 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2025-07-11T22:03:08.712Z",
-    "duration": 14908.962,
+    "startTime": "2025-07-14T17:34:53.128Z",
+    "duration": 18145.311,
     "expected": 0,
     "skipped": 0,
     "unexpected": 1,

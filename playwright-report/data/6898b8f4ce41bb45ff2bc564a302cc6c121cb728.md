@@ -1,0 +1,203 @@
+# Page snapshot
+
+```yaml
+- link:
+  - /url: /
+  - img
+- link:
+  - /url: https://www.cards.artkivebox.com/
+  - img
+- link:
+  - /url: https://www.photokive.com/
+  - img
+- link "My Account":
+  - /url: https://account.artkiveapp.com/orders
+- banner:
+  - menuitem:
+    - img
+  - menuitem "Our Products"
+  - menuitem "Pricing"
+  - menuitem "How It Works"
+  - menuitem "Memberships"
+  - button "Get $20"
+  - link "Get My Box":
+    - /url: /box-checkout
+  - menuitem
+- heading "Pricing Page" [level=1]
+- img
+- heading "It All Starts With An Artkive Box" [level=2]
+- paragraph: 24”x 17”x 4” crush-proof Artkive Box (holds 300-400 pieces of art)
+- paragraph: Prepaid shipping label to send back your box
+- paragraph: 2nd Payment Based on Number of Pieces Sent
+- text: $39 *$39 is for the Artkive Box only. Cost of photography/editing, books, and/or mosaics not included
+- heading "We Can Transform Your Art Into:" [level=2]
+- img
+- heading "Art Books" [level=3]
+- paragraph: Starting at $75
+- link "Learn More":
+  - /url: /keepsakes/art-book-for-kids
+- img
+- heading "Framed Mosaics" [level=3]
+- paragraph: Starting at $99
+- link "Learn More":
+  - /url: /keepsakes/kids-art-frames
+- img
+- heading "Digital Gallery" [level=3]
+- paragraph: Starting at $45
+- link "Learn More":
+  - /url: /digitization
+- heading "Keep in Mind" [level=3]
+- paragraph: Each piece of art sent in will be photographed and included in your order. Removing images from a book or mosaic proof will not change the cost of your order. If you decide you don't want to print a book or mosaic, once the art has been photographed, you are responsible for paying for the digital gallery which is the minimum required payment.
+- heading "Art Books" [level=2]
+- paragraph: Professional photography, editing of each piece of art, and a digital proof to review
+- paragraph: "Books range from 25-350 images and come in two sizes: 8\"x8\" or 11\"x8.5\""
+- paragraph: Book cost is dependent on number of art pieces sent.
+- text: 25 Pieces —
+- heading "$75" [level=6]
+- slider
+- text: "*The pricing slider is per book. If you send more than 350 pieces for one book, we will split them into multiple book volumes * Price does not include Artkive Box"
+- link "Get My Box":
+  - /url: /box-checkout
+- img
+- heading "Add-Ons" [level=2]
+- img
+- heading "Want Extra Copies?" [level=3]
+- paragraph: Get copies of your book for 60% OFF!
+- img
+- heading "Mosaic Discount" [level=3]
+- paragraph: Add a Framed Mosaic and get a $50 discount
+- img
+- img
+- heading "Framed Mosaics" [level=2]
+- paragraph: Showcases 25 or 9 of your images depending on size
+- paragraph: 26"x26" or 14"x14" solid wood, gallery frame and professional matting
+- paragraph:
+  - strong: $189 Large Mosaic
+- paragraph:
+  - strong: $99 Small Mosaic
+- text: "*Price does not include Artkive Box **Prices do not include cost of digitizing images"
+- link "Get My Box":
+  - /url: /box-checkout
+- heading "Digital Gallery" [level=2]
+- paragraph: Professional photography, editing of each piece of art
+- paragraph: 3 Months Free access to your digital images on our website, the iOS app, and Free Shipping of your USB.
+- paragraph: Cost is dependent on number of art pieces sent.
+- text: 25 Pieces —
+- heading "$45" [level=6]
+- slider
+- text: "* Price does not include Artkive Box"
+- link "Get My Box":
+  - /url: /box-checkout
+- img
+- heading "Additional Offerings" [level=2]
+- img
+- img
+- heading "Physical Card" [level=3]
+- paragraph: Includes 25-piece Artkive Box Package with one hardcover book
+- paragraph: A beautifully packaged Gift Card + a personal note
+- text: $114
+- link "Get Physical Card":
+  - /url: /giftcards/physical/checkout
+- img
+- img
+- heading "E-Gift Card" [level=3]
+- paragraph: Includes a 25-piece Artkive Box package with one hardcover book
+- paragraph: A festive email delivered on the date of your choosing. Easy!
+- text: $114
+- link "Get E-Gift Card":
+  - /url: /giftcards/egift/checkout
+- heading "Add-Ons" [level=2]
+- img
+- heading "Art Return — $20" [level=3]
+- paragraph: Have your original pieces shipped back to you.
+- img
+- heading "USB — $25" [level=3]
+- paragraph: USB drive with all of your high resolution images.
+- img
+- heading "Shipping Protection" [level=3]
+- paragraph: Coverage for the very rare occurrence of package loss during UPS shipping of your art.
+- img
+- heading "Rush Processing" [level=3]
+- paragraph: Get your book or mosaic in half the normal processing time.
+- img
+- img
+- heading "Save $10!" [level=1]
+- paragraph: Your discount will be automatically applied to your Artkive Box order.
+- text: First Name
+- textbox "First Name"
+- text: Email
+- textbox "Email"
+- button "Get $10 OFF"
+- paragraph: By subscribing you agree to receive marketing communications from us. To opt out, click unsubscribe at the bottom of our emails.
+- paragraph: Artkive
+- link "Pricing":
+  - /url: /pricing
+- link "About Us":
+  - /url: /about-artkive-keepsake-app
+- link "Our Process":
+  - /url: /kids-art-display-how-to
+- link "Membership":
+  - /url: /plans
+- text: Get $20
+- paragraph: Products
+- link "Art Books":
+  - /url: /keepsakes/art-book-for-kids
+- link "Framed Mosaics":
+  - /url: /keepsakes/kids-art-frames
+- link "Gift Cards":
+  - /url: /giftcards
+- link "Artkive International":
+  - /url: https://international.artkivebox.com/
+- paragraph: Explore Kive Co.
+- link "Cards by Artkive":
+  - /url: https://www.cards.artkivebox.com/
+- link "Photokive":
+  - /url: https://www.photokive.com/
+- link "Lifekive":
+  - /url: https://www.lifekive.com/
+- paragraph: Have Questions?
+- link "Email help@artkiveapp.com":
+  - /url: mailto:help@artkiveapp.com
+  - text: Email
+  - strong: help@artkiveapp.com
+- link "FAQs":
+  - /url: https://artkiveboxhelp.zendesk.com/hc/en-us
+- link "Contact Us":
+  - /url: /contact
+- link "My Orders":
+  - /url: https://account.artkiveapp.com/orders
+- paragraph: Get Started
+- text: Artkive Box includes everything you need to send in your artwork
+- link "Get My Box":
+  - /url: /box-checkout
+- text: Get The App
+- link:
+  - /url: https://itunes.apple.com/us/app/artkive-save-kids-art/id549980508?mt=8
+  - img
+- link:
+  - /url: https://www.instagram.com/artkivebox/
+- link:
+  - /url: https://www.facebook.com/artkiveapp/
+- link:
+  - /url: https://www.pinterest.com/ARTKIVE/
+- link:
+  - /url: https://www.tiktok.com/@artkivebox
+  - img
+- link:
+  - /url: https://www.youtube.com/channel/UC2cgBQDf9YFr7AbVceWKG5g
+- text: © 2025 Artkive All Rights Reserved.
+- link "Privacy Policy":
+  - /url: /privacypolicy
+  - strong: Privacy Policy
+- text: "|"
+- link "Terms of Use":
+  - /url: /tou
+  - strong: Terms of Use
+- text: "|"
+- button "Cookie Settings":
+  - strong: Cookie Settings
+- iframe
+- iframe
+- iframe
+- paragraph: Get $10 Off
+```

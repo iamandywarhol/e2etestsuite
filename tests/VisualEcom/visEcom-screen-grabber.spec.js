@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 
 test('VisualEcom: Baseline screenshot of homepage after dismissing popups', async ({ page }) => {
   // Go to the homepage
-  await page.goto('https://www.artkiveapp.com/');
+  await page.goto('https://www.artkiveapp.com/pricing');
 
   //set the viewport size
   await page.setViewportSize({ width: 1280, height: 800 });
@@ -13,8 +13,10 @@ test('VisualEcom: Baseline screenshot of homepage after dismissing popups', asyn
   // Dismiss the cookie bar
   await page.getByRole('link', { name: 'OK', exact: true }).click();
 
+  await page.waitForTimeout(2000);
+
   // Dismiss the promo dialog
-  await page.getByRole('button', { name: 'Close dialog' }).click();
+  //await page.getByRole('button', { name: 'Close dialog' }).click();
 
   // Take a full-page baseline screenshot 
   //ignore this for now. This compares and shows the differences on a local host
@@ -22,5 +24,5 @@ test('VisualEcom: Baseline screenshot of homepage after dismissing popups', asyn
   //await page.evaluate(() => window. scrollTo(0, document.body.scrollHeight));
 
   //lets see if this works
-  await page.screenshot({ path: 'tests/VisualEcom/visEcom-baseline/Homepage/Homepage-baseline.png', fullPage: true });
+  await page.screenshot({ path: 'tests/VisualEcom/visEcom-baseline/pricing/pricing-baseline.png', fullPage: true });
 });

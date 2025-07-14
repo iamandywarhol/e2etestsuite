@@ -11,7 +11,8 @@ import pixelmatch from 'pixelmatch';
 import { PNG } from 'pngjs';
 
 test('Visual diff with percentage logging', async ({ page }) => {
-  await page.goto('https://www.artkiveapp.com/');
+  //await page.goto('https://www.artkiveapp.com/');
+  await page.goto('https://www.artkiveapp.com/pricing');
   await page.setViewportSize({ width: 1280, height: 800 });
   await page.waitForTimeout(7000);
   //await page.locator('svg.kl-private-reset-css-Xuajs1').click();
@@ -24,21 +25,21 @@ test('Visual diff with percentage logging', async ({ page }) => {
   await page.addStyleTag({ content: '#hero-video { visibility: hidden; }' });
   
   // Take a screenshot
-  const screenshotPath = 'tests/VisualEcom/screenshots/homepage-current.png';
+  const screenshotPath = 'tests/VisualEcom/screenshots/pricing-current.png';
   await page.screenshot({ path: screenshotPath, fullPage: true });
 
    // Take a screenshot with the video area masked
-  // await expect(page).toHaveScreenshot('homepage-baseline.png', {
-    //fullPage: true,
-    //mask: [
-    //  page.locator('#hero-video')
-    //],
- // }); 
+   await expect(page).toHaveScreenshot('pricing-baseline.png', {
+    fullPage: true,
+   // mask: [
+   //   page.locator('#hero-video')
+   // ],
+  }); 
 
 
   let comparedImages = false;
   // Compare with baseline
-  const baselinePath = 'tests/VisualEcom/visEcom-baseline/Homepage/Homepage-baseline.png';
+  const baselinePath = 'tests/VisualEcom/visEcom-baseline/pricing/pricing-baseline.png';
   if (fs.existsSync(baselinePath)) {
     const img1 = PNG.sync.read(fs.readFileSync(baselinePath));
     const img2 = PNG.sync.read(fs.readFileSync(screenshotPath));
@@ -52,9 +53,9 @@ test('Visual diff with percentage logging', async ({ page }) => {
     const totalPixels = width * height;
     const percentDiff = ((numDiffPixels / totalPixels) * 100).toFixed(2);
 
-    fs.writeFileSync('tests/VisualEcom/homepage-diff.png', PNG.sync.write(diff));
+    fs.writeFileSync('tests/VisualEcom/pricing-diff.png', PNG.sync.write(diff));
     console.log(`Visual difference: ${percentDiff}% (${numDiffPixels} pixels)`);
-    //if the difference is greater than 0.02, the test will fail.
+    //if the difference is greater than 02% the test will fail.
     
     //tolerance logic
     //adjust here by %00.00 format.

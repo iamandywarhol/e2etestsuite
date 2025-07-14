@@ -1,0 +1,34 @@
+Possible File archtecture for screenshots and allows for dynamic and scalable creation 
+
+tests/
+├── visual/
+│   ├── baselines/
+│   │   ├── desktop/
+│   │   │   ├── homepage.png
+│   │   │   ├── pricing.png
+│   │   │   └── product-detail.png
+│   │   ├── tablet/
+│   │   │   ├── homepage.png
+│   │   │   └── pricing.png
+│   │   └── mobile/
+│   │       ├── homepage.png
+│   │       └── pricing.png
+│   ├── current/
+│   │   ├── desktop/
+│   │   ├── tablet/
+│   │   └── mobile/
+│   ├── diffs/
+│   │   ├── desktop/
+│   │   ├── tablet/
+│   │   └── mobile/
+│   ├── config/
+│   │   ├── viewports.js
+│   │   ├── exclusions.js
+│   │   └── tolerances.js
+│   ├── utils/
+│   │   ├── screenshot-utils.js
+│   │   └── comparison-utils.js
+│   └── specs/
+│       ├── homepage.spec.js
+│       ├── pricing.spec.js
+│       └── product-detail.spec.js

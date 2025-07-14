@@ -1,6 +1,6 @@
 # Artkive Testing Suite
 # artkive-playwright-tests
-
+##create Segment ignore and Klaviyo etc. 
 
 ## Commands List
 
