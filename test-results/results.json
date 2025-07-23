@@ -126,18 +126,18 @@
   },
   "suites": [
     {
-      "title": "VisualEcom/VisEcom-Pricing-page.spec.js",
-      "file": "VisualEcom/VisEcom-Pricing-page.spec.js",
+      "title": "Accountapp/account-acc-suite.spec.js",
+      "file": "Accountapp/account-acc-suite.spec.js",
       "column": 0,
       "line": 0,
       "specs": [
         {
-          "title": "Visual diff with percentage logging",
+          "title": "Upload Images",
           "ok": false,
           "tags": [],
           "tests": [
             {
-              "timeout": 30000,
+              "timeout": 300000,
               "annotations": [],
               "expectedStatus": "passed",
               "projectId": "chromium",
@@ -147,77 +147,105 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "failed",
-                  "duration": 16792,
+                  "duration": 57798,
                   "error": {
-                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveScreenshot\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\n  Expected an image 1280px by 7379px, received 1280px by 7384px. 40024 pixels (ratio 0.01 of all image pixels) are different.\n\nExpected: \u001b[33m/Users/nathan/Desktop/Artkive/test-suite/tests/VisualEcom/VisEcom-Pricing-page.spec.js-snapshots/pricing-baseline-chromium-darwin.png\u001b[39m\nReceived: \u001b[33m/Users/nathan/Desktop/Artkive/test-suite/test-results/VisualEcom-VisEcom-Pricing-32adb-iff-with-percentage-logging-chromium/pricing-baseline-actual.png\u001b[39m\n    Diff: \u001b[33m/Users/nathan/Desktop/Artkive/test-suite/test-results/VisualEcom-VisEcom-Pricing-32adb-iff-with-percentage-logging-chromium/pricing-baseline-diff.png\u001b[39m\n\nCall log:\n\u001b[2m  - Expect \"toHaveScreenshot(pricing-baseline.png)\" with timeout 5000ms\u001b[22m\n\u001b[2m    - verifying given screenshot expectation\u001b[22m\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m    - disabled all CSS animations\u001b[22m\n\u001b[2m  - waiting for fonts to load...\u001b[22m\n\u001b[2m  - fonts loaded\u001b[22m\n\u001b[2m  - Expected an image 1280px by 7379px, received 1280px by 7384px. 40024 pixels (ratio 0.01 of all image pixels) are different.\u001b[22m\n\u001b[2m  - waiting 100ms before taking screenshot\u001b[22m\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m    - disabled all CSS animations\u001b[22m\n\u001b[2m  - waiting for fonts to load...\u001b[22m\n\u001b[2m  - fonts loaded\u001b[22m\n\u001b[2m  - captured a stable screenshot\u001b[22m\n\u001b[2m  - Expected an image 1280px by 7379px, received 1280px by 7384px. 40024 pixels (ratio 0.01 of all image pixels) are different.\u001b[22m\n",
-                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveScreenshot\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\n  Expected an image 1280px by 7379px, received 1280px by 7384px. 40024 pixels (ratio 0.01 of all image pixels) are different.\n\nExpected: \u001b[33m/Users/nathan/Desktop/Artkive/test-suite/tests/VisualEcom/VisEcom-Pricing-page.spec.js-snapshots/pricing-baseline-chromium-darwin.png\u001b[39m\nReceived: \u001b[33m/Users/nathan/Desktop/Artkive/test-suite/test-results/VisualEcom-VisEcom-Pricing-32adb-iff-with-percentage-logging-chromium/pricing-baseline-actual.png\u001b[39m\n    Diff: \u001b[33m/Users/nathan/Desktop/Artkive/test-suite/test-results/VisualEcom-VisEcom-Pricing-32adb-iff-with-percentage-logging-chromium/pricing-baseline-diff.png\u001b[39m\n\nCall log:\n\u001b[2m  - Expect \"toHaveScreenshot(pricing-baseline.png)\" with timeout 5000ms\u001b[22m\n\u001b[2m    - verifying given screenshot expectation\u001b[22m\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m    - disabled all CSS animations\u001b[22m\n\u001b[2m  - waiting for fonts to load...\u001b[22m\n\u001b[2m  - fonts loaded\u001b[22m\n\u001b[2m  - Expected an image 1280px by 7379px, received 1280px by 7384px. 40024 pixels (ratio 0.01 of all image pixels) are different.\u001b[22m\n\u001b[2m  - waiting 100ms before taking screenshot\u001b[22m\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m    - disabled all CSS animations\u001b[22m\n\u001b[2m  - waiting for fonts to load...\u001b[22m\n\u001b[2m  - fonts loaded\u001b[22m\n\u001b[2m  - captured a stable screenshot\u001b[22m\n\u001b[2m  - Expected an image 1280px by 7379px, received 1280px by 7384px. 40024 pixels (ratio 0.01 of all image pixels) are different.\u001b[22m\n\n    at /Users/nathan/Desktop/Artkive/test-suite/tests/VisualEcom/VisEcom-Pricing-page.spec.js:32:23",
+                    "message": "Error: ❌ Upload failed: modal=25, page=25 Images, files=25",
+                    "stack": "Error: ❌ Upload failed: modal=25, page=25 Images, files=25\n    at AccountAppTest.uploadImages (/Users/nathan/Desktop/Artkive/test-suite/tests/Accountapp/account-acc-suite.spec.js:223:19)\n    at /Users/nathan/Desktop/Artkive/test-suite/tests/Accountapp/account-acc-suite.spec.js:340:5",
                     "location": {
-                      "file": "/Users/nathan/Desktop/Artkive/test-suite/tests/VisualEcom/VisEcom-Pricing-page.spec.js",
-                      "column": 23,
-                      "line": 32
+                      "file": "/Users/nathan/Desktop/Artkive/test-suite/tests/Accountapp/account-acc-suite.spec.js",
+                      "column": 19,
+                      "line": 223
                     },
-                    "snippet": "\u001b[0m \u001b[90m 30 |\u001b[39m\n \u001b[90m 31 |\u001b[39m    \u001b[90m// Take a screenshot with the video area masked\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 32 |\u001b[39m    \u001b[36mawait\u001b[39m expect(page)\u001b[33m.\u001b[39mtoHaveScreenshot(\u001b[32m'pricing-baseline.png'\u001b[39m\u001b[33m,\u001b[39m {\n \u001b[90m    |\u001b[39m                       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 33 |\u001b[39m     fullPage\u001b[33m:\u001b[39m \u001b[36mtrue\u001b[39m\u001b[33m,\u001b[39m\n \u001b[90m 34 |\u001b[39m    \u001b[90m// mask: [\u001b[39m\n \u001b[90m 35 |\u001b[39m    \u001b[90m//   page.locator('#hero-video')\u001b[39m\u001b[0m"
+                    "snippet": "\u001b[0m \u001b[90m 221 |\u001b[39m             console\u001b[33m.\u001b[39mlog(\u001b[32m'✅ All images uploaded and displayed successfully!'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 222 |\u001b[39m         } \u001b[36melse\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 223 |\u001b[39m             \u001b[36mthrow\u001b[39m \u001b[36mnew\u001b[39m \u001b[33mError\u001b[39m(\u001b[32m`❌ Upload failed: modal=${uploadedCount}, page=${imagesOnPage}, files=${imageFiles.length}`\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                   \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 224 |\u001b[39m         }\n \u001b[90m 225 |\u001b[39m     }\n \u001b[90m 226 |\u001b[39m\u001b[0m"
                   },
                   "errors": [
                     {
                       "location": {
-                        "file": "/Users/nathan/Desktop/Artkive/test-suite/tests/VisualEcom/VisEcom-Pricing-page.spec.js",
-                        "column": 23,
-                        "line": 32
+                        "file": "/Users/nathan/Desktop/Artkive/test-suite/tests/Accountapp/account-acc-suite.spec.js",
+                        "column": 19,
+                        "line": 223
                       },
-                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveScreenshot\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\n  Expected an image 1280px by 7379px, received 1280px by 7384px. 40024 pixels (ratio 0.01 of all image pixels) are different.\n\nExpected: \u001b[33m/Users/nathan/Desktop/Artkive/test-suite/tests/VisualEcom/VisEcom-Pricing-page.spec.js-snapshots/pricing-baseline-chromium-darwin.png\u001b[39m\nReceived: \u001b[33m/Users/nathan/Desktop/Artkive/test-suite/test-results/VisualEcom-VisEcom-Pricing-32adb-iff-with-percentage-logging-chromium/pricing-baseline-actual.png\u001b[39m\n    Diff: \u001b[33m/Users/nathan/Desktop/Artkive/test-suite/test-results/VisualEcom-VisEcom-Pricing-32adb-iff-with-percentage-logging-chromium/pricing-baseline-diff.png\u001b[39m\n\nCall log:\n\u001b[2m  - Expect \"toHaveScreenshot(pricing-baseline.png)\" with timeout 5000ms\u001b[22m\n\u001b[2m    - verifying given screenshot expectation\u001b[22m\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m    - disabled all CSS animations\u001b[22m\n\u001b[2m  - waiting for fonts to load...\u001b[22m\n\u001b[2m  - fonts loaded\u001b[22m\n\u001b[2m  - Expected an image 1280px by 7379px, received 1280px by 7384px. 40024 pixels (ratio 0.01 of all image pixels) are different.\u001b[22m\n\u001b[2m  - waiting 100ms before taking screenshot\u001b[22m\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m    - disabled all CSS animations\u001b[22m\n\u001b[2m  - waiting for fonts to load...\u001b[22m\n\u001b[2m  - fonts loaded\u001b[22m\n\u001b[2m  - captured a stable screenshot\u001b[22m\n\u001b[2m  - Expected an image 1280px by 7379px, received 1280px by 7384px. 40024 pixels (ratio 0.01 of all image pixels) are different.\u001b[22m\n\n\n\u001b[0m \u001b[90m 30 |\u001b[39m\n \u001b[90m 31 |\u001b[39m    \u001b[90m// Take a screenshot with the video area masked\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 32 |\u001b[39m    \u001b[36mawait\u001b[39m expect(page)\u001b[33m.\u001b[39mtoHaveScreenshot(\u001b[32m'pricing-baseline.png'\u001b[39m\u001b[33m,\u001b[39m {\n \u001b[90m    |\u001b[39m                       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 33 |\u001b[39m     fullPage\u001b[33m:\u001b[39m \u001b[36mtrue\u001b[39m\u001b[33m,\u001b[39m\n \u001b[90m 34 |\u001b[39m    \u001b[90m// mask: [\u001b[39m\n \u001b[90m 35 |\u001b[39m    \u001b[90m//   page.locator('#hero-video')\u001b[39m\u001b[0m\n\u001b[2m    at /Users/nathan/Desktop/Artkive/test-suite/tests/VisualEcom/VisEcom-Pricing-page.spec.js:32:23\u001b[22m"
+                      "message": "Error: ❌ Upload failed: modal=25, page=25 Images, files=25\n\n\u001b[0m \u001b[90m 221 |\u001b[39m             console\u001b[33m.\u001b[39mlog(\u001b[32m'✅ All images uploaded and displayed successfully!'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 222 |\u001b[39m         } \u001b[36melse\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 223 |\u001b[39m             \u001b[36mthrow\u001b[39m \u001b[36mnew\u001b[39m \u001b[33mError\u001b[39m(\u001b[32m`❌ Upload failed: modal=${uploadedCount}, page=${imagesOnPage}, files=${imageFiles.length}`\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                   \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 224 |\u001b[39m         }\n \u001b[90m 225 |\u001b[39m     }\n \u001b[90m 226 |\u001b[39m\u001b[0m\n\u001b[2m    at AccountAppTest.uploadImages (/Users/nathan/Desktop/Artkive/test-suite/tests/Accountapp/account-acc-suite.spec.js:223:19)\u001b[22m\n\u001b[2m    at /Users/nathan/Desktop/Artkive/test-suite/tests/Accountapp/account-acc-suite.spec.js:340:5\u001b[22m"
                     }
                   ],
-                  "stdout": [],
+                  "stdout": [
+                    {
+                      "text": "🔐 Logging into account app...\n"
+                    },
+                    {
+                      "text": "📸 Screenshot saved: 01-login-success-1753219723694.png\n"
+                    },
+                    {
+                      "text": "✅ Login successful\n"
+                    },
+                    {
+                      "text": "Uploading images...\n"
+                    },
+                    {
+                      "text": "Images uploaded so far (modal): 2\n"
+                    },
+                    {
+                      "text": "Images uploaded so far (modal): 5\n"
+                    },
+                    {
+                      "text": "Images uploaded so far (modal): 9\n"
+                    },
+                    {
+                      "text": "Images uploaded so far (modal): 13\n"
+                    },
+                    {
+                      "text": "Images uploaded so far (modal): 15\n"
+                    },
+                    {
+                      "text": "Images uploaded so far (modal): 16\n"
+                    },
+                    {
+                      "text": "Images uploaded so far (modal): 17\n"
+                    },
+                    {
+                      "text": "Images uploaded so far (modal): 21\n"
+                    },
+                    {
+                      "text": "Images uploaded so far (modal): 24\n"
+                    },
+                    {
+                      "text": "Images uploaded so far (modal): 25\n"
+                    }
+                  ],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2025-07-14T17:34:53.499Z",
+                  "startTime": "2025-07-22T21:28:39.848Z",
                   "annotations": [],
                   "attachments": [
                     {
-                      "name": "pricing-baseline-expected.png",
-                      "contentType": "image/png",
-                      "path": "/Users/nathan/Desktop/Artkive/test-suite/tests/VisualEcom/VisEcom-Pricing-page.spec.js-snapshots/pricing-baseline-chromium-darwin.png"
-                    },
-                    {
-                      "name": "pricing-baseline-actual.png",
-                      "contentType": "image/png",
-                      "path": "/Users/nathan/Desktop/Artkive/test-suite/test-results/VisualEcom-VisEcom-Pricing-32adb-iff-with-percentage-logging-chromium/pricing-baseline-actual.png"
-                    },
-                    {
-                      "name": "pricing-baseline-diff.png",
-                      "contentType": "image/png",
-                      "path": "/Users/nathan/Desktop/Artkive/test-suite/test-results/VisualEcom-VisEcom-Pricing-32adb-iff-with-percentage-logging-chromium/pricing-baseline-diff.png"
-                    },
-                    {
                       "name": "screenshot",
                       "contentType": "image/png",
-                      "path": "/Users/nathan/Desktop/Artkive/test-suite/test-results/VisualEcom-VisEcom-Pricing-32adb-iff-with-percentage-logging-chromium/test-failed-1.png"
+                      "path": "/Users/nathan/Desktop/Artkive/test-suite/test-results/Accountapp-account-acc-suite-Upload-Images-chromium/test-failed-1.png"
                     },
                     {
                       "name": "video",
                       "contentType": "video/webm",
-                      "path": "/Users/nathan/Desktop/Artkive/test-suite/test-results/VisualEcom-VisEcom-Pricing-32adb-iff-with-percentage-logging-chromium/video.webm"
+                      "path": "/Users/nathan/Desktop/Artkive/test-suite/test-results/Accountapp-account-acc-suite-Upload-Images-chromium/video.webm"
                     },
                     {
                       "name": "error-context",
                       "contentType": "text/markdown",
-                      "path": "/Users/nathan/Desktop/Artkive/test-suite/test-results/VisualEcom-VisEcom-Pricing-32adb-iff-with-percentage-logging-chromium/error-context.md"
+                      "path": "/Users/nathan/Desktop/Artkive/test-suite/test-results/Accountapp-account-acc-suite-Upload-Images-chromium/error-context.md"
                     }
                   ],
                   "errorLocation": {
-                    "file": "/Users/nathan/Desktop/Artkive/test-suite/tests/VisualEcom/VisEcom-Pricing-page.spec.js",
-                    "column": 23,
-                    "line": 32
+                    "file": "/Users/nathan/Desktop/Artkive/test-suite/tests/Accountapp/account-acc-suite.spec.js",
+                    "column": 19,
+                    "line": 223
                   }
                 }
               ],
               "status": "unexpected"
             }
           ],
-          "id": "f701c4a5c4923050afe4-d143baf11de4c5747d68",
-          "file": "VisualEcom/VisEcom-Pricing-page.spec.js",
-          "line": 13,
+          "id": "2412469b287f3f464506-bd68f0097e7739edea6a",
+          "file": "Accountapp/account-acc-suite.spec.js",
+          "line": 334,
           "column": 5
         }
       ]
@@ -225,8 +253,8 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2025-07-14T17:34:53.128Z",
-    "duration": 18145.311,
+    "startTime": "2025-07-22T21:28:39.517Z",
+    "duration": 58716.695999999996,
     "expected": 0,
     "skipped": 0,
     "unexpected": 1,
