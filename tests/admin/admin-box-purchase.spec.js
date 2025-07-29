@@ -3,7 +3,7 @@ import fs from 'fs';
 
 // Read test data from JSON file
 const testData = JSON.parse(fs.readFileSync(__dirname + '/admin-box-purchase.data.json', 'utf-8'));
-
+/*
 async login(page){
    ///my function 
    //go to a page 
@@ -12,7 +12,7 @@ async login(page){
 
   //return a value 
 
-}
+}*/
 
 
 test('Admin Box Orders: first row, third column is today\'s date', async ({ page }) => {
