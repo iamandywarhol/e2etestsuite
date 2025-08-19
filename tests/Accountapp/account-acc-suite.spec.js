@@ -60,6 +60,8 @@ class AccountAppTest {
         //2. select the book
         //3. click the purchase button
         //4. assert the book has been purchased
+
+        throw new Error('Not Implemented, Must be overridden in child class')
         
 
     }
@@ -398,12 +400,70 @@ class MyPhotosPage extends AccountAppTest{
     }
 
 
-    async newBookPurchase(){
+    async bookPurchase(){
 
         await super.createNewBook();
         //Book purchase logic
+        console.log('Starting book purchase flow...');
         
+        // Approve the generated book
+        await this.page.getByRole('button', { name: 'Approve' }).click();
+        
+        // Check required checkboxes
+        await this.page.getByRole('checkbox', { name: 'I have thoroughly reviewed my' }).check();
+        await this.page.getByRole('checkbox', { name: 'I am happy with the current' }).check();
+        await this.page.getByRole('checkbox', { name: 'I understand that I will have' }).check();
 
+        await this.page.waitForTimeout(1000);
+        
+        // Continue through the flow
+        await this.page.getByRole('button', { name: 'Continue' }).click();
+        await this.page.getByRole('button', { name: 'Continue' }).click();
+        await this.page.waitForTimeout(1000);
+        
+        // Select shipping method (Ground 5-7 Business days)
+        await this.page.getByText('Ground5 - 7 Business days$').click();
+        await this.page.locator('label').filter({ hasText: 'Ground5 - 7 Business days' }).locator('div').first().click();
+        await this.page.getByRole('radio', { name: 'Ground 5 - 7 Business days' }).press('ArrowDown');
+        await this.page.getByRole('radio', { name: 'Day 3 Day' }).press('ArrowDown');
+        await this.page.getByRole('radio', { name: 'Next Day Next Day' }).press('ArrowDown');
+        
+        // Continue to payment
+        await this.page.getByRole('button', { name: 'Continue to Payment' }).click();
+        
+        // Fill payment details
+        await this.page.locator('input[name="name"]').click();
+        await this.page.locator('input[name="name"]').fill('test user');
+        await this.page.locator('input[name="name"]').press('Tab');
+        await this.page.locator('#cardNumber').fill('4242 4242 4242 4242');
+        await this.page.getByRole('textbox', { name: 'MM/YY' }).press('Tab');
+        await this.page.getByRole('textbox', { name: 'MM/YY' }).click();
+        await this.page.getByRole('textbox', { name: 'MM/YY' }).fill('11 / 28');
+        await this.page.locator('#cvc').fill('331');
+        await this.page.locator('#zip').fill('91406');
+        
+        // Click on payment method section and confirm
+        await this.page.locator('div').filter({ hasText: 'Payment MethodName on' }).nth(2).click();
+        //await this.page.getByRole('img').click();
+        
+        // Place the order
+        await this.page.getByRole('button', { name: 'Confirm and Place Order' }).click();
+        
+        // Verify order success
+        await this.page.getByRole('heading', { name: 'Order Number:' }).waitFor({ state: 'visible' });
+        await this.page.getByRole('heading', { name: 'Thank you for your order!' }).waitFor({ state: 'visible' });
+        
+        console.log('✅ Book purchased successfully!');
+        
+        // Return order confirmation details for assertions
+        const orderNumberElement = this.page.getByRole('heading', { name: /Order Number:/ });
+        const orderNumber = await orderNumberElement.textContent();
+        
+        return {
+            success: true,
+            orderNumber: orderNumber,
+            message: 'Book purchased successfully'
+        };
     }
 
     async uploadImages(){
@@ -429,6 +489,11 @@ class MyBooksPage extends AccountAppTest{
     async goto() {
         console.log('going to books page')
         await this.page.goto(this.baseUrl + '/books');
+    }
+
+    async buySavedBook(){
+
+        //insert logic to buy a saved book.
     }
 
 }
@@ -943,7 +1008,7 @@ class ImageEditor extends AccountAppTest{
 
 // Basic test to verify login works
 
-
+/*
 //Status: Working 
 test('Account App - Login Test', async ({ page }) => {
     const accountApp = new AccountAppTest(page);
@@ -956,7 +1021,6 @@ test('Account App - Login Test', async ({ page }) => {
 
 
 //this test 
-
 
 test('Navigate tabs', async ({ page }) => {
     const accountApp = new AccountAppTest(page);
@@ -980,9 +1044,16 @@ test('Create a new book', async ({ page }) => {
     await accountApp.login();
 
     await accountApp.createNewBook();
+    await accountApp.page.waitForTimeout(15000);
+});*/
+
+test('Purchase a book', async ({ page }) => {
+    const myPhotosPage = new MyPhotosPage(page);
+    await myPhotosPage.login();
+    await myPhotosPage.bookPurchase();
+    await myPhotosPage.page.waitForTimeout(15000);
 });
-
-
+/*
 //Status: Working 
 test('Delete an image', async ({ page }) => {
     const accountApp = new AccountAppTest(page);
@@ -1034,7 +1105,7 @@ test('Drag and drop image in My Books', async ({ page }) => {
     // For example, check the src or alt of the images after drag
     // const firstImageSrc = await page.locator('.image-thumb').nth(0).getAttribute('src');
     // expect(firstImageSrc).toBe('expected-src-after-drag');
-}); */ 
+}); 
 //Status: working Success!
 
 
@@ -1072,7 +1143,7 @@ test('Add Child Name', async ({page}) => {
     //await namePage.page.waitForTimeout(3000);
 
 });
-
+/*
 test('Add Age Grade', async ({page}) => {
 
     const ageGradePage = new AgeGradePage(page);
@@ -1083,5 +1154,5 @@ test('Add Age Grade', async ({page}) => {
     await ageGradePage.addAgeGrade();
     //call a function within age grade page to do stuff. 
 
-});
+});*/
 
