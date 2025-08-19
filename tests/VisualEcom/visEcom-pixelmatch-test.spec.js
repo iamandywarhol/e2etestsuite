@@ -12,7 +12,8 @@ import { PNG } from 'pngjs';
 
 test('Visual diff with percentage logging', async ({ page }) => {
   await page.goto('https://www.artkiveapp.com/');
-  await page.setViewportSize({ width: 1280, height: 800 });
+ 
+ await page.setViewportSize({ width: 1280, height: 800 });
   await page.waitForTimeout(7000);
   //await page.locator('svg.kl-private-reset-css-Xuajs1').click();
   await page.getByRole('link', { name: 'OK', exact: true }).click();

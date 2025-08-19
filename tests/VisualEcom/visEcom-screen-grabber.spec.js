@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 
 test('VisualEcom: Baseline screenshot of homepage after dismissing popups', async ({ page }) => {
   // Go to the homepage
-  await page.goto('https://www.artkiveapp.com/pricing');
+  await page.goto('https://www.artkiveapp.com/');
 
   //set the viewport size
   await page.setViewportSize({ width: 1280, height: 800 });

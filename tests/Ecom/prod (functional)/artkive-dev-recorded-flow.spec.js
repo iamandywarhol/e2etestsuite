@@ -1,5 +1,6 @@
 // tests/artkive-dev-recorded-flow.spec.js
 //validated ready to ship 7/7/25 DO NOT ALTER THIS CODE
+//This code purchases a box from the dev environment.
 const { test, expect } = require('@playwright/test');
 
 class ArtkiveDevRecordedTest {
