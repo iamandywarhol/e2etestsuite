@@ -1,5 +1,6 @@
 /*
-TEMPLATE TEMPLATE TEMPLATE TEMPLATE
+Membership baseline test. 
+This tests the visual stability of the membership page. comparing the current screenshot to the baseline screenshot.
 
 1. Needs exact exclusion logic that is testable and prove that it is working. 
 2. Needs to display the screen differences within the local report in a pass or a fail scenario. 
@@ -11,7 +12,7 @@ import pixelmatch from 'pixelmatch';
 import { PNG } from 'pngjs';
 
 test('Visual diff with percentage logging', async ({ page }) => {
-  await page.goto('https://www.artkiveapp.com/');
+  await page.goto('https://www.artkiveapp.com/plans');
  
  await page.setViewportSize({ width: 1280, height: 800 });
   await page.waitForTimeout(7000);
@@ -26,7 +27,12 @@ test('Visual diff with percentage logging', async ({ page }) => {
   await page.addStyleTag({ content: '#hero-video { visibility: hidden; }' });
   
   // Take a screenshot
-  const screenshotPath = 'tests/VisualEcom/screenshots/homepage-current.png';
+
+
+
+
+  //when creating a new test, change path and title to match the new test
+  const screenshotPath = 'tests/VisualEcom/screenshots/memberships-current.png'; // <---- this line
   await page.screenshot({ path: screenshotPath, fullPage: true });
 
    // Take a screenshot with the video area masked
@@ -40,7 +46,8 @@ test('Visual diff with percentage logging', async ({ page }) => {
 
   let comparedImages = false;
   // Compare with baseline
-  const baselinePath = 'tests/VisualEcom/visEcom-baseline/Homepage/Homepage-baseline.png';
+  //Create a new folder in the visEcom-baseline folder for the new page
+  const baselinePath = 'tests/VisualEcom/visEcom-baseline/membership/membership-baseline.png'; //also change this line to match the new test baseline path
   if (fs.existsSync(baselinePath)) {
     const img1 = PNG.sync.read(fs.readFileSync(baselinePath));
     const img2 = PNG.sync.read(fs.readFileSync(screenshotPath));
@@ -54,7 +61,7 @@ test('Visual diff with percentage logging', async ({ page }) => {
     const totalPixels = width * height;
     const percentDiff = ((numDiffPixels / totalPixels) * 100).toFixed(2);
 
-    fs.writeFileSync('tests/VisualEcom/homepage-diff.png', PNG.sync.write(diff));
+    fs.writeFileSync('tests/VisualEcom/membership-diff.png', PNG.sync.write(diff));
     console.log(`Visual difference: ${percentDiff}% (${numDiffPixels} pixels)`);
     //if the difference is greater than 0.02, the test will fail.
     

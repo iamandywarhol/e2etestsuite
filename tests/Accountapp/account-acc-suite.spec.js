@@ -831,18 +831,67 @@ class AgeGradePage extends AccountAppTest{
     async addAgeGrade(){
         //TODO adds an age grade Tag
 
+
+        await this.page.waitForTimeout(2000);
         await this.page.getByRole('button', { name: 'Add New' }).click();
+
+        await this.page.waitForTimeout(2000);
         
-        await this.page.getByRole('textbox', { name: 'Age/Grade' }).fill('1');
+        await this.page.getByRole('textbox', { name: 'Age/Grade' }).fill(Date.now().toString().slice(-4));
+
+        await this.page.waitForTimeout(3000);
+
         
         await this.page.getByRole('button', { name: 'Save' }).click();
+
+        console.log('Age/Grade tag added: ', Date.now().toString().slice(-4));
+
+
 
     
         
         
     }
+     
+
+    /*
+
+    import { test, expect } from '@playwright/test';
+
+test('test', async ({ page }) => {
+  await page.goto('https://account-qa-automation.heirloomprint.com/signin?redirect=%2Fphotos');
+  await page.locator('input[name="email"]').click();
+  await page.locator('input[name="email"]').fill('nathan.b@artkivebox.com');
+  await page.locator('input[name="email"]').press('Tab');
+  await page.locator('input[name="password"]').fill('artkive');
+  await page.locator('input[name="password"]').press('Enter');
+  await page.getByRole('button', { name: 'Sign In' }).click();
+  await page.getByRole('link', { name: 'Age/Grade' }).click();
+  await page.getByRole('row', { name: '1234' }).getByRole('button').nth(1).click();
+  await page.getByRole('button', { name: 'Yes, Delete' }).click();
+});
+
+
+
+
+    */
+
+
+
     async removeAgeGrade(){
         //TODO removes an age grade tag
+        
+        console.log('Removing age/grade tag');
+        await this.page.waitForTimeout(2000);
+
+
+
+        if (await this.page.getByRole('row', { name: '1234' }).getByRole('button').nth(1).isVisible()){
+            await this.page.getByRole('row', { name: '1234' }).getByRole('button').nth(1).click();
+            await this.page.getByRole('button', { name: 'Yes, Delete' }).click();
+        }else{
+            console.log('Age/grade tag not found');
+        }   
 
     }
     async editAgeGrade(){
@@ -900,7 +949,7 @@ class BookBuilder extends MyBooksPage{
     }
     
 }
-
+//these drag and drop functions are not possible under the current selector framework.
 class BBImageEditor extends BookBuilder{
     constructor(page){
         super(page);
@@ -956,6 +1005,7 @@ class BBImageEditor extends BookBuilder{
 
 
 //figure out how to create specific overrides and virtual functions etc.
+//these drag and drop functions are not possible under the current selector framework.
 class ImageEditor extends AccountAppTest{
     constructor(page){
         super(page);
@@ -1045,7 +1095,7 @@ test('Create a new book', async ({ page }) => {
 
     await accountApp.createNewBook();
     await accountApp.page.waitForTimeout(15000);
-});*/
+});
 
 test('Purchase a book', async ({ page }) => {
     const myPhotosPage = new MyPhotosPage(page);
@@ -1154,5 +1204,32 @@ test('Add Age Grade', async ({page}) => {
     await ageGradePage.addAgeGrade();
     //call a function within age grade page to do stuff. 
 
-});*/
+});
 
+
+
+test('Remove Age Grade', async ({page}) => {
+
+    const ageGradePage = new AgeGradePage(page);
+    await ageGradePage.login();
+
+    await ageGradePage.goto();
+
+    await ageGradePage.addAgeGrade();
+
+    await ageGradePage.removeAgeGrade();
+
+    await ageGradePage.page.waitForTimeout(5000);
+});
+*/
+
+
+test('Add Age Grade', async ({page}) => {
+
+    const ageGradePage = new AgeGradePage(page);
+    await ageGradePage.login();
+
+    await ageGradePage.goto();
+
+    await ageGradePage.addAgeGrade();
+}); 
