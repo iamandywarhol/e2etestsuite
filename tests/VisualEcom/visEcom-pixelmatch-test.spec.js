@@ -54,7 +54,10 @@ test('Visual diff with percentage logging', async ({ page }) => {
     const totalPixels = width * height;
     const percentDiff = ((numDiffPixels / totalPixels) * 100).toFixed(2);
 
-    fs.writeFileSync('tests/VisualEcom/homepage-diff.png', PNG.sync.write(diff));
+
+
+    //you need to change where the diff file is saved as well as the name 
+    fs.writeFileSync('tests/VisualEcom/${}-diff.png', PNG.sync.write(diff)); //also change this line to have a specific different report name.
     console.log(`Visual difference: ${percentDiff}% (${numDiffPixels} pixels)`);
     //if the difference is greater than 0.02, the test will fail.
     

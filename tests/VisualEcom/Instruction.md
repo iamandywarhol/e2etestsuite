@@ -9,7 +9,7 @@ This is an instruction sheet for the visual testing part of the test suite
 1. ecom 
    👍 a. Homepage
    👍 b. Pricing 
-    c. Memberships 
+   👍 c. Memberships 
    👍 d. book preview visual test
    e. art books
    f. framed mosaics.
@@ -48,5 +48,9 @@ Information regarding the finalizerdc file structure will go here.
 ****
 How to make a new test (page)
 
-Instructions for mak
+Instructions for making a new test
+
+Lines:
+
+replace...
 ****

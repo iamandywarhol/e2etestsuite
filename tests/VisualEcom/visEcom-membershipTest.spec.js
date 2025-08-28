@@ -10,17 +10,29 @@ import { test, expect } from '@playwright/test';
 import fs from 'fs';
 import pixelmatch from 'pixelmatch';
 import { PNG } from 'pngjs';
+import path from 'path';
 
 test('Visual diff with percentage logging', async ({ page }) => {
+
+  //Define the Test Name
+  const testName = 'membership';
+
+
+  //enter the name of the 
   await page.goto('https://www.artkiveapp.com/plans');
  
- await page.setViewportSize({ width: 1280, height: 800 });
+  await page.setViewportSize({ width: 1280, height: 800 });
   await page.waitForTimeout(7000);
   //await page.locator('svg.kl-private-reset-css-Xuajs1').click();
   await page.getByRole('link', { name: 'OK', exact: true }).click();
   await page.waitForTimeout(1000);
+
+
+  const closeButton = page.getByRole('button', { name: 'Close dialog', exact:true });
+  if(closeButton.count() > 0) {
   await page.getByRole('button', { name: 'Close dialog', exact:true }).click();
   await page.waitForTimeout(1000);
+  }
   //
   
   //Exclusions logic
@@ -60,8 +72,17 @@ test('Visual diff with percentage logging', async ({ page }) => {
     );
     const totalPixels = width * height;
     const percentDiff = ((numDiffPixels / totalPixels) * 100).toFixed(2);
+    
+     const testName = 'membership'
+    //This is the line that needs to be chaqnged for the diff file 
+    // Create the directory structure if it doesn't exist
+    const diffDir = `tests/VisualEcom/diffreport/${testName}`;
+    if (!fs.existsSync(diffDir)) {
+      fs.mkdirSync(diffDir, { recursive: true });
+    }
 
-    fs.writeFileSync('tests/VisualEcom/membership-diff.png', PNG.sync.write(diff));
+    // Now write the file
+    fs.writeFileSync(`${diffDir}/${testName}-diff.png`, PNG.sync.write(diff));
     console.log(`Visual difference: ${percentDiff}% (${numDiffPixels} pixels)`);
     //if the difference is greater than 0.02, the test will fail.
     
