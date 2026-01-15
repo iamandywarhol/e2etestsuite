@@ -4,7 +4,7 @@
 
 A comprehensive end-to-end testing framework built with Playwright for automated functional and visual regression testing. This suite includes cross-browser testing, visual comparison utilities, and automated test execution across multiple environments.
 
-## 🚀 Features
+## Features
 
 - **Cross-Browser Testing**: Supports Chromium, Firefox, WebKit, and mobile browsers
 - **Visual Regression Testing**: Pixel-perfect visual comparisons using pixelmatch
@@ -14,23 +14,23 @@ A comprehensive end-to-end testing framework built with Playwright for automated
 - **CI/CD Ready**: Configured for continuous integration pipelines
 - **Test Reporting**: HTML and JSON test reports with screenshots and videos
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Playwright** - Modern browser automation
 - **Node.js** - Runtime environment
 - **pixelmatch** - Visual diff comparison
 - **pngjs** - PNG image processing
 
-## 📋 Prerequisites
+## Prerequisites
 
 - Node.js >= 16.0.0
 - npm >= 8.0.0
 
-## ⚙️ Installation
+## Installation
 
 # Clone the repository
-git clone https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
-cd YOUR_REPO_NAME
+git clone https://github.com/iamandywarhol/e2etestsuite.git
+cd e2etestsuite
 
 # Install dependencies
 npm install

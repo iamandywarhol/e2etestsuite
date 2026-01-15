@@ -7,10 +7,10 @@ This is an instruction sheet for the visual testing part of the test suite
 
 
 1. ecom 
-   👍 a. Homepage
-   👍 b. Pricing 
-   👍 c. Memberships 
-   👍 d. book preview visual test
+   a. Homepage
+   b. Pricing 
+   c. Memberships 
+   d. book preview visual test
    e. art books
    f. framed mosaics.
    g. our process page
