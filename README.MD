@@ -30,6 +30,7 @@ A comprehensive end-to-end testing framework built with Playwright for automated
 
 # Clone the repository
 git clone https://github.com/iamandywarhol/e2etestsuite.git
+
 cd e2etestsuite
 
 # Install dependencies
