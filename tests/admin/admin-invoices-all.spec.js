@@ -10,8 +10,7 @@ const testData = JSON.parse(fs.readFileSync(__dirname + '/admin-box-purchase.dat
 
 test('Admin Invoices: Output each row until Payment Status is Paid', async ({ page }) => {
   // Login
-  await page.goto('https://www.artkiveapp.com/admin');
-  //await page.goto('https://apple-pay-qa.heirloomprint.com/admin');
+  await page.goto('https://example-admin-site.com/admin');
   await page.getByRole('textbox', { name: 'Email' }).fill(testData.login.email);
   await page.getByRole('textbox', { name: 'Password' }).fill(testData.login.password);
   await page.getByRole('button', { name: 'Login' }).click();

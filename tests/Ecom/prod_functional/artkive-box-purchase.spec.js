@@ -39,7 +39,7 @@ class ArtkiveTestRunner {
 
   async navigateToSite() {
     try {
-      await this.page.goto('https://www.artkiveapp.com', { 
+      await this.page.goto('https://example-ecommerce-site.com', { 
         waitUntil: 'networkidle',
         timeout: 30000 
       });

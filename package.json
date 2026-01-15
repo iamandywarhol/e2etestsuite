@@ -14,7 +14,7 @@
     "test:mobile": "playwright test --project='Mobile Chrome' --project='Mobile Safari'",
     "test:cross-browser": "playwright test --project=chromium --project=firefox --project=webkit",
     "install-browsers": "playwright install",
-    "record": "npx playwright codegen https://www.artkiveapp.com",
+    "record": "npx playwright codegen https://example-ecommerce-site.com",
     "record-custom": "node utils/record-flow.js",
     "report": "playwright show-report",
     "report:json": "playwright test --reporter=json",
@@ -36,7 +36,7 @@
   ],
   "author": {
     "name": "Development Team",
-    "email": "dev-team@company.com"
+    "email": "dev-team@example.com"
   },
   "license": "MIT",
   "engines": {

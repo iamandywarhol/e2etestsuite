@@ -13,7 +13,7 @@ import fs from 'fs';
 const testData = JSON.parse(fs.readFileSync(__dirname + '/admin-box-purchase.data.json', 'utf-8'));
 
 test('Gift Cards: at least one created within last 14 days', async ({ page }) => {
-  await page.goto('https://www.artkiveapp.com/admin');
+  await page.goto('https://example-admin-site.com/admin');
   await page.getByRole('textbox', { name: 'Email' }).fill(testData.login.email);
   await page.getByRole('textbox', { name: 'Password' }).fill(testData.login.password);
   await page.getByRole('button', { name: 'Login' }).click();
@@ -22,7 +22,7 @@ test('Gift Cards: at least one created within last 14 days', async ({ page }) =>
   await page.getByRole('link', { name: 'Gift Cards' }).click();
   await page.getByRole('link', { name: 'Ecom Gift Cards' }).click();
 
-  // Get today's date in MM-DD-YYYY format
+  // get today's date in MM-DD-YYYY format
   const today = new Date();
   const mm = String(today.getMonth() + 1).padStart(2, '0');
   const dd = String(today.getDate()).padStart(2, '0');
@@ -106,7 +106,7 @@ test('Gift Cards: at least one created within last 14 days', async ({ page }) =>
         break;
     }
 
-  //this asserstion will fail if no gift cards were created within the last 14 days. 
+  //this assertion will fail if no gift cards were created within the last 14 days
   expect(foundRecent).toBe(true);
   }
 });

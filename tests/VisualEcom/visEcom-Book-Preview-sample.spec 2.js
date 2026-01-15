@@ -2,10 +2,10 @@ import { test, expect } from '@playwright/test';
 
 test.describe('Artkive Book Preview Functionality', () => {
   test.beforeEach(async ({ page }) => {
-    // Navigate to the art book page
+    // navigate to the art book page
     await page.goto('https://example-ecommerce-site.com/keepsakes/art-book-for-kids');
     
-    // Set viewport for consistent testing
+    // set viewport for consistent testing
     await page.setViewportSize({ width: 1280, height: 800 });
     
     // Wait for page to load

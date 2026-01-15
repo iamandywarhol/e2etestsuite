@@ -13,7 +13,7 @@ const testData = JSON.parse(fs.readFileSync(__dirname + '/admin-box-purchase.dat
 
 
 test('Comp Plans: Plans expiring two years from todays date', async ({ page }) => {
-    await page.goto('https://www.artkiveapp.com/admin');
+    await page.goto('https://example-admin-site.com/admin');
     await page.getByRole('textbox', { name: 'Email' }).fill(testData.login.email);
     await page.getByRole('textbox', { name: 'Password' }).fill(testData.login.password);
     await page.getByRole('button', { name: 'Login' }).click();
@@ -94,13 +94,10 @@ test('Comp Plans: Plans expiring two years from todays date', async ({ page }) =
           break;
       }
       else {
-          //console.log ('Gift Card ID: ' + id + ' was not created within the last 14 days. Test Failed.');
+          
           // Automatically fail the test
-          expect.fail('Test Failed. Gift Card ID: ' + id + ' was not created within the last 14 days.');
-  
+         expect.fail('Test Failed. membership ID: ' + id + '  is not expiring in 2 years.');
       
-          //we will create another function call here later to then run a gift card purchase and then a 
-          //recheck to see if the gift card purchase was successful. 
           break;
       }
   

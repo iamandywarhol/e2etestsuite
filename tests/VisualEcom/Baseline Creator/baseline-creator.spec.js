@@ -10,8 +10,8 @@ const VIEWPORTS = {
 };
 
 const PAGES = [
-  { name: 'homepage', url: 'https://www.artkiveapp.com/' },
-  { name: 'pricing', url: 'https://www.artkiveapp.com/pricing' }
+  { name: 'homepage', url: 'https://example-ecommerce-site.com/' },
+  { name: 'pricing', url: 'https://example-ecommerce-site.com/pricing' }
 ];
 
 const EXCLUSIONS = [

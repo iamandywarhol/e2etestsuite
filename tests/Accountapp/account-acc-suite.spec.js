@@ -9,7 +9,7 @@ const testData = JSON.parse(fs.readFileSync(__dirname + '/account-bookbuilder.da
 class AccountAppTest {
     constructor(page) {
         this.page = page;
-        this.baseUrl = 'https://account-qa-automation.heirloomprint.com/';
+        this.baseUrl = 'https://example-account-app.com/';
     }
 
 
@@ -83,12 +83,12 @@ class AccountAppTest {
         // Generate a unique email for each run
         const timestamp = Date.now();
         const sliceTimeStamp = string(timestamp).slice(-4);
-        const email = `nathan.b+${timestamp}@artkivebox.com`;
-        const password = 'Artkive1!';
+        const email = `test.user+${timestamp}@example.com`;
+        const password = 'TestPassword123!';
         const name = 'Example user';
 
         // Go to the sign-in page and click 'Create an account'
-        await this.page.goto('https://account-qa-automation.heirloomprint.com/signin?redirect=%2Fphotos');
+        await this.page.goto('https://example-account-app.com/signin?redirect=%2Fphotos');
         await this.page.getByRole('link', { name: 'Create an account' }).click();
 
         // Fill in the registration form
@@ -186,10 +186,10 @@ class AccountAppTest {
 
     // Login function - reads credentials from JSON file
     async login() {
-        console.log('🔐 Logging into account app...');
+        console.log('Logging into account app...');
         
         // Navigate to login page with redirect to photos
-        await this.page.goto('https://account-qa-automation.heirloomprint.com/signin?redirect=%2Fphotos');
+        await this.page.goto('https://example-account-app.com/signin?redirect=%2Fphotos');
         
         // Fill email
         await this.page.locator('input[name="email"]').click();
@@ -859,11 +859,11 @@ class AgeGradePage extends AccountAppTest{
     import { test, expect } from '@playwright/test';
 
 test('test', async ({ page }) => {
-  await page.goto('https://account-qa-automation.heirloomprint.com/signin?redirect=%2Fphotos');
+  await page.goto('https://example-account-app.com/signin?redirect=%2Fphotos');
   await page.locator('input[name="email"]').click();
-  await page.locator('input[name="email"]').fill('nathan.b@artkivebox.com');
+  await page.locator('input[name="email"]').fill('test.user@example.com');
   await page.locator('input[name="email"]').press('Tab');
-  await page.locator('input[name="password"]').fill('artkive');
+  await page.locator('input[name="password"]').fill('TestPassword123!');
   await page.locator('input[name="password"]').press('Enter');
   await page.getByRole('button', { name: 'Sign In' }).click();
   await page.getByRole('link', { name: 'Age/Grade' }).click();

@@ -11,15 +11,13 @@ import pixelmatch from 'pixelmatch';
 import { PNG } from 'pngjs';
 
 test('Visual diff with percentage logging', async ({ page }) => {
-  //await page.goto('https://www.artkiveapp.com/');
-  await page.goto('https://www.artkiveapp.com/pricing');
+  await page.goto('https://example-ecommerce-site.com/pricing');
   await page.setViewportSize({ width: 1280, height: 800 });
   await page.waitForTimeout(7000);
   //await page.locator('svg.kl-private-reset-css-Xuajs1').click();
   await page.getByRole('link', { name: 'OK', exact: true }).click();
   //await page.getByRole('button', { name: 'Close dialog', exact:true }).click();
   await page.waitForTimeout(1000);
-  //
   
   //Exclusions logic
   await page.addStyleTag({ content: '#hero-video { visibility: hidden; }' });
@@ -36,9 +34,8 @@ test('Visual diff with percentage logging', async ({ page }) => {
    // ],
   }); 
 
-
   let comparedImages = false;
-  // Compare with baseline
+  // compare with baseline
   const baselinePath = 'tests/VisualEcom/visEcom-baseline/pricing/pricing-baseline.png';
   if (fs.existsSync(baselinePath)) {
     const img1 = PNG.sync.read(fs.readFileSync(baselinePath));

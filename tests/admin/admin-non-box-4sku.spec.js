@@ -14,7 +14,7 @@ const CURRENT_DAY_COL = 2; // 1-based index for 'Current Day' column
 
 test('Admin Non-Box SKUs: Cards - Original, Wedding, XL Cards (Current Day > 1)', async ({ page }) => {
   // Go to admin login page
-  await page.goto('https://www.artkiveapp.com/admin');
+  await page.goto('https://example-admin-site.com/admin');
   await page.getByRole('textbox', { name: 'Email' }).fill(testData.login.email);
   await page.getByRole('textbox', { name: 'Password' }).fill(testData.login.password);
   await page.getByRole('button', { name: 'Login' }).click();
@@ -46,7 +46,7 @@ test('Admin Non-Box SKUs: Cards - Original, Wedding, XL Cards (Current Day > 1)'
 
 test('Gift Cards: at least one created within last 14 days', async ({ page }) => {
   // Login
-  await page.goto('https://www.artkiveapp.com/admin');
+  await page.goto('https://example-admin-site.com/admin');
   await page.getByRole('textbox', { name: 'Email' }).fill(testData.login.email);
   await page.getByRole('textbox', { name: 'Password' }).fill(testData.login.password);
   await page.getByRole('button', { name: 'Login' }).click();

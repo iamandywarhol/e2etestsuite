@@ -7,17 +7,17 @@ class ArtkiveDevRecordedTest {
   constructor(page) {
     this.page = page;
     this.testData = {
-      firstName: 'nathan',
-      lastName: 'brookes', 
-      email: 'nathan.b+jst@artkivebox.com',
-      phone: '(111) 222-3333',
-      streetAddress: '15800 Arminta st.',
-      city: 'Van nuys',
-      zipCode: '91406',
-      cardName: 'test user',
+      firstName: 'John',
+      lastName: 'Doe', 
+      email: 'test.user@example.com',
+      phone: '(555) 123-4567',
+      streetAddress: '123 Test Street',
+      city: 'Test City',
+      zipCode: '12345',
+      cardName: 'Test User',
       cardNumber: '4242 4242 4242 4242',
-      expiryDate: '11/29',
-      cvv: '331'
+      expiryDate: '12/25',
+      cvv: '123'
     };
     this.cardAttemptLog = [];
   }
@@ -37,44 +37,44 @@ class ArtkiveDevRecordedTest {
     console.log('🚀 Starting dev environment Artkive box purchase flow...\n');
 
     try {
-      // Step 1: Navigate to dev site
+      // Navigate to dev site
       console.log('Step 1: Navigating to dev site...');
-      await this.page.goto('https://apple-pay-qa.heirloomprint.com/');
+      await this.page.goto('https://example-test-environment.com/');
       await this.takeScreenshot('01-dev-initial-page');
 
-      // Step 2: Click "Get My Box" 
+      // click "Get My Box" 
       console.log('Step 2: Clicking Get My Box...');
       await this.page.locator('#main-header').getByRole('link', { name: 'Get My Box' }).click();
       await this.takeScreenshot('02-dev-get-my-box-clicked');
 
-      // Step 3: Continue through initial steps
+      // continue through initial steps
       console.log('Step 3: Continuing through flow...');
       await this.page.getByRole('button', { name: 'Continue' }).first().click();
       await this.takeScreenshot('03-dev-continued-flow');
 
-      // Step 4: Scroll down (simulating the arrow key presses)
+      // scroll down (simulating arrow key presses)
       console.log('Step 4: Scrolling down...');
       for (let i = 0; i < 19; i++) {
         await this.page.locator('body').press('ArrowDown');
       }
       await this.takeScreenshot('04-dev-scrolled-down');
 
-      // Step 5: Continue to form
+      // continue to form
       console.log('Step 5: Continuing to form...');
       await this.page.getByRole('button', { name: 'Continue' }).click();
       await this.takeScreenshot('05-dev-form-page');
 
-      // Step 6: Fill personal information
+      // fill personal info
       console.log('Step 6: Filling personal information...');
       await this.fillPersonalInfo();
       await this.takeScreenshot('06-dev-personal-info-filled');
 
-      // Step 7: Fill address information  
+      // fill address info
       console.log('Step 7: Filling address information...');
       await this.fillAddressInfo();
       await this.takeScreenshot('07-dev-address-filled');
 
-      // Step 8: Check for confirmation before payment
+      // check for confirmation before payment
       console.log('Step 8: Checking for confirmation before payment...');
       const confirmationHeading = this.page.getByRole('heading', { name: 'Your Artkive Box is On the way!' });
       let confirmationReached = false;
@@ -87,16 +87,16 @@ class ArtkiveDevRecordedTest {
         // Not visible, continue to payment
       }
 
-      // Step 9: Fill payment information and submit order if needed
+      // fill payment info and submit if needed
       if (!confirmationReached) {
         console.log('Step 9: Filling payment information...');
         confirmationReached = await this.fillPaymentInfoAndSubmit();
       }
 
-      // Step 10: Check for confirmation after payment
+      // check for confirmation after payment
       console.log('Step 10: Checking for confirmation after payment...');
       try {
-        // Use a more flexible selector: any heading containing the confirmation text
+        // use a more flexible selector - any heading with confirmation text
         const headings = await this.page.locator('h1, h2, h3, h4, h5, h6');
         const count = await headings.count();
         let found = false;
@@ -122,7 +122,7 @@ class ArtkiveDevRecordedTest {
         return { status: 'failed', message: 'Confirmation not found after payment', cardAttempts: this.cardAttemptLog };
       }
 
-      // Step 11: Handle terms and final submission (only if not already confirmed)
+      // handle terms and final submission (only if not already confirmed)
       console.log('Step 11: Handling terms and submission...');
       await this.handleFinalSubmission();
       await this.takeScreenshot('11-dev-final-step');
@@ -178,7 +178,7 @@ class ArtkiveDevRecordedTest {
   }
 
   async fillPaymentInfoAndSubmit() {
-    // Check if confirmation is already present before proceeding
+    // check if confirmation is already present before proceeding
     const confirmationHeading = this.page.getByRole('heading', { name: 'Your Artkive Box is On the way!' });
     try {
       if (await confirmationHeading.isVisible({ timeout: 2000 })) {
@@ -207,7 +207,7 @@ class ArtkiveDevRecordedTest {
       console.log(`🔄 Trying card: ${card.description} (${card.number})`);
       
       try {
-        // Clear and fill card number
+        // clear and fill card number
         const cardField = this.page.locator('input[name="cardNumber"]');
         await cardField.click();
         await cardField.press(process.platform === 'darwin' ? 'Meta+A' : 'Control+A');
@@ -219,25 +219,25 @@ class ArtkiveDevRecordedTest {
         if (await expiryField.isVisible({ timeout: 2000 })) {
           await expiryField.click();
           await expiryField.press(process.platform === 'darwin' ? 'Meta+A' : 'Control+A');
-          await expiryField.fill('11/29');
+          await expiryField.fill('12/25');
           await expiryField.press('Tab');
         }
 
-        // Clear and fill CVC field
+        // clear and fill CVC
         const cvcField = this.page.locator('input[name="cvc"], input[name="cvv"], input[name="cardCvc"]');
         if (await cvcField.isVisible({ timeout: 2000 })) {
           await cvcField.click();
           await cvcField.press(process.platform === 'darwin' ? 'Meta+A' : 'Control+A');
-          await cvcField.fill('331');
+          await cvcField.fill('123');
           await cvcField.press('Tab');
         }
 
-        // Clear and fill zip field
+        // clear and fill zip
         const zipField = this.page.locator('input[name="postal"], input[name="zip"], input[name="billingZipCode"]');
         if (await zipField.isVisible({ timeout: 2000 })) {
           await zipField.click();
           await zipField.press(process.platform === 'darwin' ? 'Meta+A' : 'Control+A');
-          await zipField.fill('91406');
+          await zipField.fill('12345');
         }
 
         this.cardAttemptLog.push(`Card ${card.number} filled successfully.`);
@@ -250,7 +250,7 @@ class ArtkiveDevRecordedTest {
           }
         }
 
-        // Click place order button
+        // click place order button
         const placeOrderButton = this.page.getByRole('button', { name: /place order/i });
         if (await placeOrderButton.isVisible({ timeout: 5000 })) {
           await placeOrderButton.click();
@@ -259,17 +259,17 @@ class ArtkiveDevRecordedTest {
           throw new Error('Place order button not found.');
         }
 
-        // Wait a moment for any response
+        //wait for response
         await this.page.waitForTimeout(3000);
 
-        // Check for success (confirmation page)
+        // check for success (confirmation page)
         const successHeading = this.page.getByRole('heading', { name: /Artkive Box is On the way/i });
         if (await successHeading.isVisible({ timeout: 5000 })) {
-          this.cardAttemptLog.push(`✅ Payment successful with card ${card.number}! Confirmation detected.`);
+          this.cardAttemptLog.push(`Payment successful with card ${card.number}! Confirmation detected.`);
           return true;
         }
 
-        // Check for decline message
+        // check for decline message
         const declineSelectors = [
           'text=card has been declined',
           'text=declined',
@@ -307,39 +307,39 @@ class ArtkiveDevRecordedTest {
                 break;
               }
             } catch (e) {
-              // Continue to next close button
+              // continue to next close button
             }
           }
           
-          // Wait a moment before trying next card
+          // wait before trying next card
           await this.page.waitForTimeout(1000);
-          continue; // Try next card
+          continue; // try next card
         }
 
         // If neither success nor decline detected, wait a bit longer and check again
         await this.page.waitForTimeout(2000);
         
-        // Final check for success
+        // final check for success
         if (await successHeading.isVisible({ timeout: 3000 })) {
-          this.cardAttemptLog.push(`✅ Payment successful with card ${card.number}! Confirmation detected.`);
+          this.cardAttemptLog.push(`Payment successful with card ${card.number}! Confirmation detected.`);
           return true;
         }
 
-        // If we get here, something unexpected happened
-        console.log(`⚠️ Unexpected result with card ${card.number}, trying next card...`);
+        // if we get here, something unexpected happened
+        console.log(`Unexpected result with card ${card.number}, trying next card...`);
         this.cardAttemptLog.push(`Unexpected result with card ${card.number}, trying next card.`);
 
       } catch (error) {
-        console.log(`❌ Error with card ${card.number}: ${error.message}`);
+        console.log(`Error with card ${card.number}: ${error.message}`);
         this.cardAttemptLog.push(`Error with card ${card.number}: ${error.message}`);
         
-        // Try to recover and continue with next card
+        // try to recover and continue with next card
         try {
           // Refresh the page or go back to payment form
           await this.page.reload();
           await this.page.waitForTimeout(2000);
           
-          // Re-fill the form data
+          // re-fill the form data
           await this.fillPersonalInfo();
           await this.fillAddressInfo();
         } catch (recoveryError) {
@@ -348,24 +348,24 @@ class ArtkiveDevRecordedTest {
       }
     }
 
-    // If we get here, all cards failed
+    // if we get here, all cards failed
     this.cardAttemptLog.push('All test cards were declined or failed.');
     throw new Error('All test cards were declined or failed');
   }
 
   async handleFinalSubmission() {
-    // Check terms agreement
+    // check terms agreement
     await this.page.getByRole('checkbox', { name: 'I agree with Terms of Use and' }).check();
 
-    // Final order button
+    // final order button
     await this.page.getByRole('button', { name: 'Place Order • $' }).click();
 
-    // Wait for confirmation
+    // wait for confirmation
     try {
       await this.page.getByRole('heading', { name: 'Your Artkive Box is On the' }).click();
-      console.log('✅ Order confirmation found!');
+      console.log('Order confirmation found!');
     } catch (e) {
-      console.log('⚠️ Order confirmation not found, but flow completed');
+      console.log('Order confirmation not found, but flow completed');
     }
   }
 }

@@ -9,11 +9,11 @@ EGIFT ONLY
 import { test, expect } from '@playwright/test';
 import fs from 'fs';
 
-// Use your existing admin credentials from the JSON file
+//use existing admin credentials from the JSON file
 const testData = JSON.parse(fs.readFileSync(__dirname + '/admin-box-purchase.data.json', 'utf-8'));
 
 test('Gift Cards: at least one created within last 14 days', async ({ page }) => {
-  await page.goto('https://www.artkiveapp.com/admin');
+  await page.goto('https://www.exampl-site.com/admin');
   await page.getByRole('textbox', { name: 'Email' }).fill(testData.login.email);
   await page.getByRole('textbox', { name: 'Password' }).fill(testData.login.password);
   await page.getByRole('button', { name: 'Login' }).click();

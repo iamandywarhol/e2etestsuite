@@ -1,6 +1,43 @@
 # Artkive Testing Suite
 # artkive-playwright-tests
-##create Segment ignore and Klaviyo etc. 
+# E2E Testing Suite - Playwright Automation Framework
+
+A comprehensive end-to-end testing framework built with Playwright for automated functional and visual regression testing. This suite includes cross-browser testing, visual comparison utilities, and automated test execution across multiple environments.
+
+## 🚀 Features
+
+- **Cross-Browser Testing**: Supports Chromium, Firefox, WebKit, and mobile browsers
+- **Visual Regression Testing**: Pixel-perfect visual comparisons using pixelmatch
+- **Functional Testing**: Comprehensive E2E test coverage for e-commerce flows
+- **Admin Panel Testing**: Automated testing for admin dashboard functionality
+- **Account Management Testing**: User account creation, login, and management flows
+- **CI/CD Ready**: Configured for continuous integration pipelines
+- **Test Reporting**: HTML and JSON test reports with screenshots and videos
+
+## 🛠️ Tech Stack
+
+- **Playwright** - Modern browser automation
+- **Node.js** - Runtime environment
+- **pixelmatch** - Visual diff comparison
+- **pngjs** - PNG image processing
+
+## 📋 Prerequisites
+
+- Node.js >= 16.0.0
+- npm >= 8.0.0
+
+## ⚙️ Installation
+
+# Clone the repository
+git clone https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
+cd YOUR_REPO_NAME
+
+# Install dependencies
+npm install
+
+# Install Playwright browsers
+npm run install-browsers
+
 
 ## Commands List
 

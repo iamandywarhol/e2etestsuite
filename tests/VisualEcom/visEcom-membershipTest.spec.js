@@ -1,10 +1,11 @@
 /*
-Membership baseline test. 
-This tests the visual stability of the membership page. comparing the current screenshot to the baseline screenshot.
+Membership baseline test
+tests the visual stability of the membership page, comparing current screenshot to baseline
 
-1. Needs exact exclusion logic that is testable and prove that it is working. 
-2. Needs to display the screen differences within the local report in a pass or a fail scenario. 
-3. There are other requirements that need to be met that are not yet in mind. 
+TODO:
+- needs exact exclusion logic that is testable
+- needs to display screen differences in local report (pass/fail)
+- other requirements TBD
 */
 import { test, expect } from '@playwright/test';
 import fs from 'fs';
@@ -17,9 +18,7 @@ test('Visual diff with percentage logging', async ({ page }) => {
   //Define the Test Name
   const testName = 'membership';
 
-
-  //enter the name of the 
-  await page.goto('https://www.artkiveapp.com/plans');
+  await page.goto('https://example-ecommerce-site.com/plans');
  
   await page.setViewportSize({ width: 1280, height: 800 });
   await page.waitForTimeout(7000);
@@ -43,8 +42,8 @@ test('Visual diff with percentage logging', async ({ page }) => {
 
 
 
-  //when creating a new test, change path and title to match the new test
-  const screenshotPath = 'tests/VisualEcom/screenshots/memberships-current.png'; // <---- this line
+  // when creating a new test, change path and title to match the new test
+  const screenshotPath = 'tests/VisualEcom/screenshots/memberships-current.png';
   await page.screenshot({ path: screenshotPath, fullPage: true });
 
    // Take a screenshot with the video area masked

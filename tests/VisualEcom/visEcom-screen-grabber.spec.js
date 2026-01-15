@@ -1,16 +1,16 @@
 import { test, expect } from '@playwright/test';
 
 test('VisualEcom: Baseline screenshot of homepage after dismissing popups', async ({ page }) => {
-  // Go to the homepage
-  await page.goto('https://www.artkiveapp.com/');
+  // go to the homepage
+  await page.goto('https://example-ecommerce-site.com/');
 
-  //set the viewport size
+  // set the viewport size
   await page.setViewportSize({ width: 1280, height: 800 });
 
-  // Wait for popups to appear
+  // wait for popups to appear
   await page.waitForTimeout(7000);
 
-  // Dismiss the cookie bar
+  // dismiss the cookie bar
   await page.getByRole('link', { name: 'OK', exact: true }).click();
 
   await page.waitForTimeout(2000);

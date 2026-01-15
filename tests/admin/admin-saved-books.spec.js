@@ -5,9 +5,7 @@ import fs from 'fs';
 const testData = JSON.parse(fs.readFileSync(__dirname + '/admin-box-purchase.data.json', 'utf-8'));
 
 test('Saved Books: at least one Created At date matches today', async ({ page }) => {
-  // test link 
-  // await page.goto('https://apple-pay-qa.heirloomprint.com/admin');
-  await page.goto('https://www.artkiveapp.com/admin')
+  await page.goto('https://example-admin-site.com/admin')
   await page.getByRole('textbox', { name: 'Email' }).fill(testData.login.email);
   await page.getByRole('textbox', { name: 'Password' }).fill(testData.login.password);
   await page.getByRole('button', { name: 'Login' }).click();
